@@ -1,0 +1,16 @@
+h1,
+h3,
+h5 {
+  text-align: center;
+  padding: 5%;
+  margin: 2%;
+}
+h1 {
+  color: dodgerblue;
+}
+h3 {
+  color: gold;
+}
+h5 {
+  color: darkgrey;
+}
