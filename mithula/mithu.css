@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple CSS Example</title>
-    <style>
-        /* Your CSS code here */
-        p {
-            color: blue;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <p>This is a paragraph with blue text and a font size of 16 pixels.</p>
-</body>
-</html>
+.button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
