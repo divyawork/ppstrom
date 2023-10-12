@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CSS Example</title>
+    <style>
+        /* Your CSS code here */
+        p {
+            color: blue;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph with blue text and a font size of 16 pixels.</p>
+</body>
+</html>
