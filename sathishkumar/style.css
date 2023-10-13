@@ -1,0 +1,8 @@
+/* CSS in a separate stylesheet */
+h1 {
+    color: blue;
+    font-size: 24px;
+}
+
+/* Inline CSS in HTML */
+<p style="font-weight: bold;">This is a bold paragraph.</p>
