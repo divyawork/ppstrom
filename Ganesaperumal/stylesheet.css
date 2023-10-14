@@ -1,0 +1,45 @@
+/* This is a CSS comment */
+
+/* Style the body element */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the heading elements */
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #555;
+}
+
+/* Style the paragraph element */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Style the unordered list */
+ul {
+  list-style-type: disc;
+}
+
+/* Style list items */
+li {
+  color: #0077b6;
+}
+
+/* Style hyperlinks */
+a {
+  color: #ff5733;
+  text-decoration: none;
+}
+
+/* Style links on hover */
+a:hover {
+  text-decoration: underline;
+}
