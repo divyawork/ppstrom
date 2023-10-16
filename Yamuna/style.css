@@ -21,7 +21,7 @@
     }
     
     .hero{
-        background-image:url("https://spaces.w3schools.com/images/f4RBYsY2hxA_1200_670.jpg");
+        background-image:url("");
         background-repeat: no-repeat;
         background-size: cover;
         height: 600px;
@@ -51,7 +51,7 @@
     .about{
         
         height: 700px;
-        background-image: url("https://spaces.w3schools.com/images/xwMlVSqP20U.jpg");
+        background-image: url("");
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
@@ -278,7 +278,7 @@
     /*medium screens - Laptops*/
     @media screen and (max-width: 1024px) {
         .hero{
-            background-image:url("https://spaces.w3schools.com/images/f4RBYsY2hxA_400_320.jpg");
+            background-image:url("");
             height: 500px;
             background-position: center;
         }
@@ -297,7 +297,7 @@
     /*Small screens - tablets*/
     @media screen and (max-width: 768px) {
         .hero{
-            background-image:url("https://spaces.w3schools.com/images/f4RBYsY2hxA_600_400.jpg");
+            background-image:url("");
             height: 600px;
             background-position: center;
         }
@@ -328,7 +328,7 @@
     /*Extra small screens - phones*/
     @media screen and (max-width: 480px) {
         .hero{
-            background-image:url("https://spaces.w3schools.com/images/f4RBYsY2hxA_600_400.jpg");
+            background-image:url("");
             height: 500px;
             background-position: center;
             
