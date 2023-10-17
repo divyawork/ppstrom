@@ -1,7 +1,10 @@
 // script.js
-const button = document.getElementById("clickMeButton");
-const output = document.getElementById("outputText");
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+    const responseMessage = document.getElementById("responseMessage");
 
-button.addEventListener("click", function() {
-    output.textContent = "Hello from JavaScript!";
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        responseMessage.textContent = "Form submitted successfully!";
+    });
 });
