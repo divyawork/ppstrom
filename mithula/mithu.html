@@ -4,80 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        #todo-list {
-            width: 300px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        #todo-list input[type="text"] {
-            width: 80%;
-        }
-
-        #todo-list ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #todo-list li {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-        }
-
-        #todo-list button {
-            background-color: #ff5733;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin-left: 10px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>To-Do List</h1>
     <div id="todo-list">
         <input type="text" id="new-task" placeholder="Add a new task">
         <button id="add-task">Add</button>
-        <ul id="tasks">
-        </ul>
+        <ul id="tasks"></ul>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const newTaskInput = document.getElementById("new-task");
-            const addTaskButton = document.getElementById("add-task");
-            const taskList = document.getElementById("tasks");
-
-            addTaskButton.addEventListener("click", function() {
-                const taskText = newTaskInput.value.trim();
-
-                if (taskText) {
-                    const listItem = document.createElement("li");
-                    listItem.innerHTML = `
-                        <span>${taskText}</span>
-                        <button class="remove-task">Remove</button>
-                    `;
-
-                    taskList.appendChild(listItem);
-                    newTaskInput.value = "";
-
-                    const removeTaskButtons = document.querySelectorAll(".remove-task");
-                    for (const button of removeTaskButtons) {
-                        button.addEventListener("click", function() {
-                            taskList.removeChild(button.parentElement);
-                        });
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
