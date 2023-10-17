@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+document.getElementById("colorButton").addEventListener("click", function() {
+    var randomColor = getRandomColor();
+    document.getElementById("about").style.backgroundColor = randomColor;
+});
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple JavaScript Example</title>
-</head>
-
-<body>
-    <h1>Simple JavaScript Example</h1>
-    <button onclick="showAlert()">Click me!</button>
-
-    <script>
-        function showAlert() {
-            alert('Hello, World! This is a simple JavaScript alert.');
-        }
-    </script>
-</body>
-
-</html>
+function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
