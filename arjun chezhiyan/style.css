@@ -1,0 +1,15 @@
+/* This is a CSS comment */
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: darkblue;
+  }
+  
+  p {
+    color: #333;
+    font-size: 16px;
+  }
+  
