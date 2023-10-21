@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Newbie</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 style="color: red;">Meet Arjun - The Coding Newbie</h1>
+    </header>
+    <img id="coding-image" src="coding-newbie.jpg" alt="Coding Newbie">
+    <p id="bio" style="color: black;">Arjun is a passionate individual who has recently embarked on the journey of coding and programming. With a keen interest in technology, he's eager to learn and explore the world of coding to create amazing software and solve real-world problems. He's excited to join Pepper Programming!</p>
+    <p id="html-code" class="hidden" style="color: black;">HTML Code: &lt;p&gt;Hello, I'm Arjun&lt;/p&gt;</p>
+    <p id="css-code" class="hidden" style="color: black;">CSS Code: p &#123; font-size: 18px; &#125;</p>
+    <p id="js-code" class="hidden" style="color: black;">JavaScript Code: // Add your code here</p>
+    <button id="show-html" style="background: red; color: black;">HTML</button>
+    <button id="show-css" style="background: red; color: black;">CSS</button>
+    <button id="show-js" style="background: red; color: black;">JavaScript</button>
+    <script src="script.js"></script>
+</body>
+</html>
