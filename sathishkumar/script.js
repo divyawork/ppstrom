@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // This is a comment in JavaScript
 
 // Variables
@@ -19,3 +20,17 @@ function calculateBirthYear() {
 greet();
 const birthYear = calculateBirthYear();
 console.log("You were born in " + birthYear + ".");
+=======
+// JavaScript within an HTML document
+<script>
+    function greet() {
+        alert("Hello, World!");
+    }
+</script>
+
+// External JavaScript file (script.js)
+// script.js
+function greet() {
+    alert("Hello, World!");
+}
+>>>>>>> main
