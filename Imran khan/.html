@@ -1,43 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Amazon Clone</title>
-  <style>
-    /* Add your CSS styles here */
-  </style>
+  <title>Calculator</title>
 </head>
+
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="My Amazon Clone Logo">
+
+  <style>
+    /* Styles */  
+    .calculator {
+      display: inline-block; 
+      padding: 20px;
+      border: 1px solid #ccc; 
+    }
+    
+    #input {
+      width: 210px;
+      font-size: 18px;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 50px);
+      grid-gap: 10px; 
+    }
+    
+    button {
+      width: 50px;
+      height: 50px; 
+      font-size: 18px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      cursor: pointer;  
+    }
+    
+    button:hover {
+      background: #ddd;
+    }
+    
+    .operator {
+      background: #eee;
+    }
+    
+    .clear {
+      background: #ffd5d8;
+      color: #d9534f;
+    }
+    
+    .equal {
+      grid-column: span 2;
+      background: #adf9e7;
+    }
+  </style>
+
+  <div class="calculator">
+
+    <input type="text" id="input" disabled>
+    
+    <div class="buttons">
+    
+      <button class="operator" id="+">+</button>
+      <button class="operator" id="-">-</button>
+      <button class="operator" id="*">&times;</button>
+      <button class="operator" id="/">&divide;</button>  
+
+      <button class="number" id="7">7</button>
+      <button class="number" id="8">8</button>
+      <button class="number" id="9">9</button>
+
+      <button class="number" id="4">4</button>
+      <button class="number" id="5">5</button>
+      <button class="number" id="6">6</button>
+
+      <button class="number" id="1">1</button>
+      <button class="number" id="2">2</button>
+      <button class="number" id="3">3</button>
+
+      <button class="number" id="0">0</button>
+      <button class="decimal" id=".">.</button>
+      <button class="clear" id="clear">C</button>
+      
+      <button class="equal" id="=">=</button>
+      
     </div>
-    <div class="search">
-      <input type="text" placeholder="Search products...">
-      <button type="submit">Search</button>
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a href="#">Sign in</a></li>
-        <li><a href="#">Orders</a></li>
-        <li><a href="#">Cart</a></li>
-      </ul>
-    </div>
-  </header>
-  <main>
-    <div class="banner">
-      <img src="banner.jpg" alt="Banner Image">
-    </div>
-    <div class="products">
-      <h2>Featured Products</h2>
-      <div class="product-list">
-        <!-- Add your product cards here -->
-      </div>
-    </div>
-  </main>
-  <footer>
-    <p>© 2023 My Amazon Clone. All rights reserved.</p>
-  </footer>
+
+  </div>
+
+  <script>
+    // JavaScript      
+    let input = document.getElementById('input');
+    
+    let buttons = document.querySelectorAll('button');
+    
+    buttons.forEach(button => {
+    
+      button.addEventListener('click', () => {
+      
+        let value = button.id;
+        
+        if (value === '=') {
+          input.value = eval(input.value);
+        } else if (value === 'C') {
+          input.value = ''; 
+        } else {
+          input.value += value;
+        }
+    
+      });
+    
+    });
+  </script>
+
 </body>
 </html>
