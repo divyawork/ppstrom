@@ -1,23 +1,23 @@
-// program to find the factorial of a number
 
-// take input from the user
-const number = parseInt(prompt('Enter a positive integer: '));
+let display = document.getElementById('display');
+let currentInput = '';
 
-// checking if number is negative
-if (number < 0) {
-    console.log('Error! Factorial for negative number does not exist.');
+function appendToDisplay(value) {
+    currentInput += value;
+    display.value = currentInput;
 }
 
-// if number is 0
-else if (number === 0) {
-    console.log(`The factorial of ${number} is 1.`);
+function clearDisplay() {
+    currentInput = '';
+    display.value = '';
 }
 
-// if number is positive
-else {
-    let fact = 1;
-    for (i = 1; i <= number; i++) {
-        fact *= i;
+function calculate() {
+    try {
+        currentInput = eval(currentInput);
+        display.value = currentInput;
+    } catch (error) {
+        display.value = 'Error';
+        currentInput = '';
     }
-    console.log(`The factorial of ${number} is ${fact}.`);
 }

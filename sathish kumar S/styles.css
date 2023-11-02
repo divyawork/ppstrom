@@ -1,0 +1,30 @@
+/* This is a CSS comment */
+
+/* Select and style all paragraphs */
+p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px;
+}
+
+/* Style a specific element by its ID */
+#header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style elements with a specific class */
+.button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Apply styles to an element when it's hovered over */
+.button:hover {
+  background-color: #45a049;
+}

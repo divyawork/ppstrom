@@ -1,23 +1,37 @@
-<html lang="en">
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-<head>
-    <link rel="stylesheet" href="style.css" />
-    <title>Browser</title>
+.calculator {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #888;
+    background-color: #f4f4f4;
+}
 
-    <style>
-        h1,p {
-            color: red;
-            font-size: 20px;
-            background-color: yellow;
-        }
-    </style>
+input[type="text"], button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px;
+}
 
-</head>
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
 
-<body>
-    <h1>This is the heading</h1>
-    <p>This is a paragraph</p>
-    <div>This is a div</div>
-</body>
+.row {
+    display: flex;
+    justify-content: space-between;
+}
 
-</html>
+
+    
