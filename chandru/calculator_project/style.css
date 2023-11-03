@@ -1,0 +1,12 @@
+.calculator {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+  
