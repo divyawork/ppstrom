@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Household Budget Tracker</title>
+    <link rel="stylesheet" type="text/css" href="budget tracker.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Indian Household Budget Tracker</h1>
+        <h2>Income and Expenses</h2>
+        <input type="text" id="description" placeholder="Description">
+        <input type="number" id="amount" placeholder="Amount (₹)">
+        <button id="addIncome">Add Income</button>
+        <button id="addExpense">Add Expense</button>
+        <h2>Summary</h2>
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Amount (₹)</th>
+                <th>Type</th>
+            </tr>
+        </table>
+        <p>Total Income: ₹<span id="totalIncome">0.00</span></p>
+        <p>Total Expenses: ₹<span id="totalExpense">0.00</span></p>
+        <p>Balance: ₹<span id="balance">0.00</span></p>
+    </div>
+    <script src="Budget tracker.js"></script>
+</body>
+</html>
