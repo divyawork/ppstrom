@@ -1,19 +1,109 @@
+body, h1, h2, p, ul, li, button {
+   margin: 0;
+   padding: 0;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+   background-color: #f0f0f0;
+   font-family: Arial, sans-serif;
+}
+
+header {
+   background-color: #051c27;
+   color: #fff;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 40px;
+}
+
+header h1 {
+   font-family:'Times New Roman', Times, serif;
+   font-size: 2em;
+   margin-bottom: 10px;
+}
+
+.navbar {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+.navbar li {
+   display: inline;
+   margin-right: 20px;
+}
+
+.navbar a {
+   text-decoration: none;
+   color: #fff;
+   transition: color 0.3s;
+}
+
+.navbar a:hover {
+   color: #ff6600;
+}
+
+.bannerpic {
   
-  .sticky-header {
-    position: fixed;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .content {
-    padding: 80px 20px; /* Adjust padding to accommodate the fixed header */
-  }
-  
+   background-size: cover;
+   background-position: center;
+   width: 100%;
+   height:550px ;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.banner h1 {
+   font-size: 3em;
+   color: #ffffff;
+   margin-bottom: 10px;
+}
+
+.banner h2  {
+   font-size: 1.5em;
+   color: white;
+}
+
+.btn button {
+   background-color: #ff6600;
+   color: #fff;
+   margin: 10px;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   font-size: 1.2em;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.btn button:hover {
+   background-color: #ff9900;
+}
+
+.navbar li:first-child a {
+   padding-right: 20px;
+   border-right: 1px solid #fff;
+}
+
+.login-btn {
+   width: 100px;
+   background-color: #007bff;
+   color: black; 
+   border: 1px solid #007bff; 
+   border-radius: 5px; 
+   padding: 8px 20px;
+   transition: background-color 0.3s ease;
+   text-align: center;
+}
+
+.login-btn:hover,
+.login-btn:focus {
+   background-color: #b1d0f1;
+   color: rgb(44, 12, 12);
+   text-decoration: none;
+   border-color: #0056b3;
+}
