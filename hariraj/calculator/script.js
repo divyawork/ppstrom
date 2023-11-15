@@ -1,41 +1,29 @@
-let display = document.getElementById("display");
-let currentInput = "";
+let displayValue = '0';
+
+function updateDisplay() {
+    document.getElementById('display').innerText = displayValue;
+}
 
 function appendToDisplay(value) {
-    currentInput += value;
-    display.textContent = currentInput;
+    if (displayValue === '0') {
+        displayValue = value;
+    } else {
+        displayValue += value;
+    }
+    updateDisplay();
 }
 
 function clearDisplay() {
-    currentInput = "";
-    display.textContent = "0";
+    displayValue = '0';
+    updateDisplay();
 }
 
 function calculateResult() {
     try {
-        currentInput = eval(currentInput).toString();
-        display.textContent = currentInput;
+        displayValue = eval(displayValue).toString();
+        updateDisplay();
     } catch (error) {
-        display.textContent = "Error";
+        displayValue = 'Error';
+        updateDisplay();
     }
 }
-
-// Create buttons dynamically
-const buttonValues = ['7', '8', '9', '+', '4', '5', '6', '-', '1', '2', '3', '*', '0', '=', '/'];
-const buttons = document.querySelector(".buttons");
-
-buttonValues.forEach((value) => {
-    const button = document.createElement("button");
-    button.textContent = value;
-    button.className = "button";
-    button.addEventListener("click", () => {
-        if (value === "=") {
-            calculateResult();
-        } else if (value === "C") {
-            clearDisplay();
-        } else {
-            appendToDisplay(value);
-        }
-    });
-    buttons.appendChild(button);
-});
