@@ -1,0 +1,62 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://as1.ftcdn.net/v2/jpg/06/08/69/34/1000_F_608693407_5arddMcqksT7gK9zrXTkaiqXx3uHr6me.jpg'); /* Add your image file here */
+    background-size: cover;
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #2ecc71; /* Cell color */
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.cell:hover {
+    background-color: #27ae60; /* Hover color */
+}
+
+#status {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#reset-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e74c3c; /* Reset button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#reset-button:hover {
+    background-color: #c0392b; /* Hover color for reset button */
+}
