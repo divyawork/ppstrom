@@ -5,18 +5,18 @@ function appendToDisplay(value) {
   document.getElementById('display').value = expression;
 }
 
-function calculate() {
+function clearDisplay() {
+  expression = '';
+  document.getElementById('display').value = '';
+}
+
+function calculateResult() {
   try {
     const result = eval(expression);
     document.getElementById('display').value = result;
-    expression = '';
+    expression = result.toString();
   } catch (error) {
     document.getElementById('display').value = 'Error';
     expression = '';
   }
-}
-
-function clearDisplay() {
-  expression = '';
-  document.getElementById('display').value = '';
 }
