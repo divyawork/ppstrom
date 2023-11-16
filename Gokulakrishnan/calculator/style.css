@@ -2,8 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: url('https://images.alphacoders.com/782/78291.jpg'); /* Replace with your background image URL */
-  background-size: cover;
+  background: url('https://images.unsplash.com/photo-1625225233840-695456021cde?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FsY3VsYXRlfGVufDB8fDB8fHww');
+  background-size: contain;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +50,11 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .operator {
@@ -69,4 +75,10 @@ button {
 .calculate {
   background-color: #f0c987;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .calculator {
+    max-width: 90%;
+  }
 }
