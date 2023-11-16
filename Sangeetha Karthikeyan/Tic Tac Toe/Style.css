@@ -1,4 +1,9 @@
-Copy code
+body {
+    background-image: url('Tic\ Tac\ toe.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
