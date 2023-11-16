@@ -1,7 +1,4 @@
-function appendToDisplay(value) {
-    document.getElementById('display').value += value;
-  }
-  let currentInput = '';
+let currentInput = '';
 let previousInput = '';
 let operation = '';
 
