@@ -14,7 +14,11 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(160, 102, 102, 0.822);
 }
-
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
 input {
     width: 90%;
     padding: 10px;
