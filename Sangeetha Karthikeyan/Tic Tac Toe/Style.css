@@ -4,6 +4,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed; 
 }
+
+h1 {
+    color: white;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
