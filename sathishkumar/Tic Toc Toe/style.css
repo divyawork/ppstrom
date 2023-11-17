@@ -5,6 +5,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url('https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg?w=740&t=st=1700236678~exp=1700237278~hmac=dde86d3791499e7544a8335b883db80bd5f192eeab58ab6c4bcb2cd79b537779'); /* Set a background image */
+    background-size: cover; /* Cover the entire element with the background image */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
   }
   
   .container {
@@ -14,6 +18,12 @@ body {
   h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: #dddddd;
+  }
+  h2{
+    color:gold;
+    font-family: 'DM Serif Display', serif;
+font-family: 'Poppins', sans-serif;
   }
   
   .board {
@@ -26,7 +36,7 @@ body {
   .cell {
     width: 100px;
     height: 100px;
-    background: #eee;
+    background: #7071E8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +46,7 @@ body {
   }
   
   .cell:hover {
-    background: #ddd;
+    background: #dddddd;
   }
   
   .status {

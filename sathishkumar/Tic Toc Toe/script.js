@@ -95,4 +95,4 @@ cells.forEach((cell) => {
   cell.addEventListener('click', handleCellClick);
 });
 
-restartBtn.addEventListener('click', restartGame)
+restartBtn.addEventListener('click', restartGame);
