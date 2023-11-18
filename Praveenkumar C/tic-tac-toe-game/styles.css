@@ -1,5 +1,5 @@
 body {
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -13,7 +13,7 @@ body {
 
 h1 {
     font-size: 2em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .game-board {
@@ -26,7 +26,7 @@ h1 {
 .cell {
     width: 100px;
     height: 100px;
-    border: 1px solid #ccc;
+    border: 5px solid #000000;
     font-size: 2em;
     display: flex;
     align-items: center;
@@ -35,17 +35,17 @@ h1 {
 }
 
 .cell:hover {
-    background-color: #f0f0f0;
+    background-color: #ebe1e1;
 }
 
 .result {
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 button {
     padding: 10px;
-    font-size: 1em;
+    font-size: 2em;
     cursor: pointer;
 }
