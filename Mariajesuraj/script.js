@@ -1,15 +1,21 @@
-window.onscroll = function() {stickyHeader()};
+// Get the current hour
+const currentHour = new Date().getHours();
 
-const header = document.querySelector('.sticky-header');
-const content = document.querySelector('.content');
-const headerHeight = header.clientHeight;
+// Function to set greeting based on time
+function setGreeting() {
+    let greeting = '';
+    if (currentHour < 12) {
+        greeting = 'Good morning';
+    } else if (currentHour < 18) {
+        greeting = 'Good afternoon';
+    } else {
+        greeting = 'Good evening';
+    }
 
-function stickyHeader() {
-  if (window.pageYOffset > headerHeight) {
-    header.classList.add('sticky');
-    content.style.paddingTop = `${headerHeight}px`;
-  } else {
-    header.classList.remove('sticky');
-    content.style.paddingTop = '0';
-  }
+    // Set the greeting in the marquee element
+    const marquee = document.querySelector('.banner marquee');
+    marquee.innerHTML = `<h1>${greeting}, I am Maria Jesuraj</h1>`;
 }
+
+// Call the function to set greeting
+setGreeting();
