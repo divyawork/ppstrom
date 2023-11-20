@@ -1,7 +1,21 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url(image/calc.jpg);
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
 }
+#calc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .calculator {
     width: 300px;
