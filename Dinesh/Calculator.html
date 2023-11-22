@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Calculator.css">
-  <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Calculator.css">
+    <title>Calculator</title>
 </head>
-<body>
-  <div id="calculator">
-    <input type="text" id="display" disabled>
-    <div class="buttons">
-      <button class="btn" onclick="appendToDisplay('7')">7</button>
-      <button class="btn" onclick="appendToDisplay('8')">8</button>
-      <button class="btn" onclick="appendToDisplay('9')">9</button>
-      <button class="btn operator" onclick="appendToDisplay('+')">+</button>
-      <button class="btn" onclick="appendToDisplay('4')">4</button>
-      <button class="btn" onclick="appendToDisplay('5')">5</button>
-      <button class="btn" onclick="appendToDisplay('6')">6</button>
-      <button class="btn operator" onclick="appendToDisplay('-')">-</button>
-      <button class="btn" onclick="appendToDisplay('1')">1</button>
-      <button class="btn" onclick="appendToDisplay('2')">2</button>
-      <button class="btn" onclick="appendToDisplay('3')">3</button>
-      <button class="btn operator" onclick="appendToDisplay('*')">*</button>
-      <button class="btn" onclick="appendToDisplay('0')">0</button>
-      <button class="btn clear" onclick="clearDisplay()">C</button>
-      <button class="btn operator" onclick="appendToDisplay('/')">/</button>
-      <button class="btn equal" onclick="calculate()">=</button>
+
+<body style="background-color:powderblue;">
+    <div class="container">
+        <h1>Calculator By Dinesh</h1>
+
+        <div class="calculator">
+            <input type="text" name="screen" id="screen">
+            <table>
+                <tr>
+                    <td><button>(</button></td>
+                    <td><button>)</button></td>
+                    <td><button>C</button></td>
+                    <td><button>%</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button>X</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button>-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button>.</button></td>
+                    <td><button>/</button></td>
+                    <td><button>=</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
-  </div>
-  <script src="Calculator.js"></script>
+
 </body>
+<script src="Calculator.js"></script>
+
 </html>
