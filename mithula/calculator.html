@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,30 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
+            background: url('https://getwallpapers.com/wallpaper/full/b/a/f/809114-cute-anime-background-3840x2160-for-windows-10.jpg') center/cover no-repeat;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
+
+        .header {
+            color: #100505;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         .calculator {
             background-color: #393e46;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
         }
+
         input[type="text"] {
             width: 100%;
             padding: 10px;
@@ -26,12 +39,17 @@
             border: none;
             border-radius: 5px;
             margin-bottom: 10px;
+            text-align: right;
+            color: #fff;
+            background-color: #1b262c;
         }
+
         .btn-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 10px;
         }
+
         .btn {
             width: 100%;
             padding: 20px;
@@ -41,21 +59,30 @@
             cursor: pointer;
             color: #fff;
         }
+
         .btn.operator {
             background-color: #4eb7cc;
         }
+
         .btn.number {
             background-color: #f95d6a;
         }
+
         .btn.clear {
             background-color: #ffbf69;
         }
+
         .btn.equals {
             background-color: #1b262c;
         }
     </style>
 </head>
+
 <body>
+    <div class="header">
+        <h1>Calculator</h1>
+    </div>
+
     <div class="calculator">
         <input type="text" id="display" readonly>
         <div class="btn-container">
@@ -98,4 +125,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+let display = document.getElementById('display');
+
+function appendToDisplay(value) {
+    display.value += value;
+}
+
+function clearDisplay() {
+    display.value = '';
+=======
 let displayValue = '0';
 
 function updateDisplay() {
@@ -16,10 +26,18 @@ function appendToDisplay(value) {
 function clearDisplay() {
     displayValue = '0';
     updateDisplay();
+>>>>>>> main
 }
 
 function calculateResult() {
     try {
+<<<<<<< HEAD
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = 'Error';
+    }
+}
+=======
         displayValue = eval(displayValue).toString();
         updateDisplay();
     } catch (error) {
@@ -27,3 +45,4 @@ function calculateResult() {
         updateDisplay();
     }
 }
+>>>>>>> main
