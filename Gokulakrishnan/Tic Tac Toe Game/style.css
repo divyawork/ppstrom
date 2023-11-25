@@ -52,7 +52,7 @@ body {
   border: 2px solid aqua;
   padding: 8px;
   text-shadow: 0 0 10px aqua;
-  background-color: black; /* Setting the background color to black */
+  background-color: black; 
 }
 
 .restart-btn {
