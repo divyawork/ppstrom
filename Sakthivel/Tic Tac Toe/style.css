@@ -8,6 +8,12 @@
     height: 100vh;
     background: linear-gradient(135deg, #8052ec, #d161ff);
   }
+  #name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
   html {
     font-size: 16px;
   }
