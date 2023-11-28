@@ -4,25 +4,30 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #a9f3f860;
-}
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/446/166/small_2x/blue-and-green-backdrop-with-squares-vector.jpg'); 
+    background-size: cover;
+    }
 
 .calculator {
-    background-color: #cac0c086;
+    background-color: #e7eef3c4;
     width: 320px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(160, 102, 102, 0.822);
+    box-shadow: 0 0 10px rgba(230, 242, 243, 0.822);
 }
-
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
 input {
     width: 90%;
     padding: 10px;
-    border: 1px solid #8b8585;
+    border: 1px solid #181616;
     border-radius: 3px;
     font-size: 20px;
     margin-bottom: 15px;
-    background-color: #99d0f086;
+    background-color: #e5f2fa86;
 }
 
 .buttons {
@@ -32,7 +37,7 @@ input {
 }
 
 button {
-    background-color: #6f6f94b2;
+    background-color: #0ca6dade;
     color: rgb(252, 243, 243);
     padding: 10px;
     font-size: 20px;
@@ -51,5 +56,5 @@ button {
     color: white;
 }
 button:hover {
-    background-color: #6dc0d4c0;
+    background-color: #6b68a3c0;
 }

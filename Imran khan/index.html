@@ -1,117 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Calculator</title>
-</head>
-
-<body>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Calculator</title>
   <style>
-    /* Styles */  
-    .calculator {
-      display: inline-block; 
+    body {
+      background: url('https://cdn.wallpapersafari.com/21/24/xDvZSe.jpg') center/cover;
       padding: 20px;
-      border: 1px solid #ccc; 
     }
-    
-    #input {
-      width: 210px;
-      font-size: 18px;
-      text-align: right;
-      margin-bottom: 10px;
-    }
-    
-    .buttons {
+
+    .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 50px);
-      grid-gap: 10px; 
+      align-items: center;
+      justify-content: center; 
     }
-    
-    button {
-      width: 50px;
-      height: 50px; 
-      font-size: 18px;
-      border: 1px solid #ddd;
-      background: #f9f9f9;
-      cursor: pointer;  
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 1px;
+      background-color: #999;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    } 
+
+    .calculator-grid button {
+      font-size: 25px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+    } 
+
+    textarea {
+      grid-column: span 4;
+      font-family: 'DM Mono', monospace;
+      font-size: 25px;
+      text-align: end;
+      background-color: #fad3cb;
+      padding: 15px;
+      border: none;
     }
-    
-    button:hover {
-      background: #ddd;
+
+    .calculator-grid button:nth-child(n+18) {
+      background-color: tomato; 
     }
-    
-    .operator {
-      background: #eee;
-    }
-    
-    .clear {
-      background: #ffd5d8;
-      color: #d9534f;
-    }
-    
-    .equal {
-      grid-column: span 2;
-      background: #adf9e7;
+
+    button:hover,
+    .calculator-grid button:nth-child(n+18):hover {
+      background-color: #440b15;
+      color: white;
+      transition: 0.2s;
     }
   </style>
+</head>
+<body>
 
-  <div class="calculator">
+<h1 style="text-align: center; color: white;">Calculator</h1>
 
-    <input type="text" id="input" disabled>
-    
-    <div class="buttons">
-    
-      <button class="operator" id="+">+</button>
-      <button class="operator" id="-">-</button>
-      <button class="operator" id="*">&times;</button>
-      <button class="operator" id="/">&divide;</button>  
-
-      <button class="number" id="7">7</button>
-      <button class="number" id="8">8</button>
-      <button class="number" id="9">9</button>
-
-      <button class="number" id="4">4</button>
-      <button class="number" id="5">5</button>
-      <button class="number" id="6">6</button>
-
-      <button class="number" id="1">1</button>
-      <button class="number" id="2">2</button>
-      <button class="number" id="3">3</button>
-
-      <button class="number" id="0">0</button>
-      <button class="decimal" id=".">.</button>
-      <button class="clear" id="clear">C</button>
-      
-      <button class="equal" id="=">=</button>
-      
-    </div>
-
+<div class="grid-container">
+  <div class="calculator-grid">
+    <textarea type="text" id="inputtext" placeholder="0"></textarea>
+    <button>C</button>
+    <button>DEL</button>
+    <button></button>
+    <button>+</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>-</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>*</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>/</button>
+    <button>00</button>
+    <button>0</button>
+    <button>.</button>
+    <button>=</button>
   </div>
+</div>
 
-  <script>
-    // JavaScript      
-    let input = document.getElementById('input');
-    
-    let buttons = document.querySelectorAll('button');
-    
-    buttons.forEach(button => {
-    
-      button.addEventListener('click', () => {
-      
-        let value = button.id;
-        
-        if (value === '=') {
-          input.value = eval(input.value);
-        } else if (value === 'C') {
-          input.value = ''; 
-        } else {
-          input.value += value;
-        }
-    
-      });
-    
+<script>
+  const input = document.getElementById('inputtext');
+  const buttons = document.querySelectorAll('button');
+
+  function calculate(expression) {
+    try {
+      return new Function('return ' + expression)();
+    } catch (error) {
+      return 'Malformed Operation';
+    }
+  }
+
+  function operation(buttonValue) {
+    if (buttonValue === 'C') {
+      input.value = '';
+    } else if (buttonValue === 'DEL') {
+      input.value = input.value.slice(0, -1);
+    } else if (buttonValue === '=') {
+      input.value = calculate(input.value);
+    } else {
+      input.value += buttonValue;
+    }
+  }
+
+  buttons.forEach(button => {
+    let buttonValue = button.innerText;
+    button.addEventListener('click', function () {
+      operation(buttonValue);
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
