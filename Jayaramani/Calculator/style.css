@@ -1,60 +1,66 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
-    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/446/166/small_2x/blue-and-green-backdrop-with-squares-vector.jpg'); 
-    background-size: cover;
-    }
-
-.calculator {
-    background-color: #e7eef3c4;
-    width: 320px;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(230, 242, 243, 0.822);
-}
-h1 {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://files.123freevectors.com/wp-content/original/206107-beige-blue-and-pink-numbers-background-graphic.jpg") center/cover no-repeat;
+  }
+  
+  .calculator {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 20px 20px;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-input {
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #181616;
-    border-radius: 3px;
-    font-size: 20px;
-    margin-bottom: 15px;
-    background-color: #e5f2fa86;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-}
-
-button {
-    background-color: #0ca6dade;
-    color: rgb(252, 243, 243);
-    padding: 10px;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#clearButton {
-    background-color: rgba(247, 109, 109, 0.932); /* Change the background color to red */
-    color: white; /* Change the text color to white */
-}
-
-#calculateResult  {
-    background-color: rgba(102, 199, 83, 0.932); 
     color: white;
-}
-button:hover {
-    background-color: #6b68a3c0;
-}
+    margin-bottom: 20px;
+  }
+  
+  #display {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000e1a;
+    pointer-events: none;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .buttons button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    transition: transform 0.2s ease-in-out; 
+  }
+  
+  .buttons button:active {
+    transform: scale(0.99);
+  }
+  
+  .operator {
+    color: #2f9fff;
+  }
