@@ -13,7 +13,8 @@ function appendOperator(value) {
     }
     operator = value;
     prevValue = displayValue;
-    displayValue = '';
+    displayValue += ` ${operator} `;
+    document.getElementById('display').value = displayValue;
 }
 
 function clearDisplay() {
@@ -23,30 +24,29 @@ function clearDisplay() {
     document.getElementById('display').value = '';
 }
 
+function deleteLastCharacter() {
+    displayValue = displayValue.slice(0, -1);
+    document.getElementById('display').value = displayValue;
+}
+
 function calculateResult() {
     if (prevValue && operator && displayValue) {
-        const num1 = parseFloat(prevValue);
-        const num2 = parseFloat(displayValue);
-        switch (operator) {
-            case '+':
-                displayValue = num1 + num2;
-                break;
-            case '-':
-                displayValue = num1 - num2;
-                break;
-            case '*':
-                displayValue = num1 * num2;
-                break;
-            case '/':
-                if (num2 !== 0) {
-                    displayValue = num1 / num2;
-                } else {
-                    displayValue = 'Error';
-                }
-                break;
+        const expression = prevValue + ' ' + operator + ' ' + displayValue.split(' ').pop();
+        try {
+            displayValue = eval(expression);
+            operator = '';
+            prevValue = '';
+            document.getElementById('display').value = displayValue;
+        } catch (error) {
+            displayValue = 'Error';
+            operator = '';
+            prevValue = '';
+            document.getElementById('display').value = displayValue;
         }
-        operator = '';
-        prevValue = '';
-        document.getElementById('display').value = displayValue;
     }
+}
+
+function calculatePercentage() {
+    displayValue = eval(displayValue) / 100;
+    document.getElementById('display').value = displayValue;
 }
