@@ -19,6 +19,10 @@ function calculateResult() {
         display.value = 'Error';
     }
 }
+function undo() {
+    currentInput = previousInput.slice(0, -1);
+    display.value = previousInput;
+  }
 
 // Listen for keyboard input
 document.addEventListener('keydown', function(event) {
@@ -35,6 +39,18 @@ document.addEventListener('keydown', function(event) {
         else if (key === 'Backspace') {
             performBackspace();
             return;
+        }
+        else if (key === 'Escape') {
+            clearDisplay();
+            return;
+        }
+        else if (key === 'Delete') {
+            performBackspace();
+            return;
+        }
+        else if (key === 'z') {
+            undo();
+            return;              
         }
 
         appendValue(key);
