@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annual Day Celebration Countdown</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("https://orig00.deviantart.net/b6ba/f/2010/291/8/f/__firework___by_whitespiritwolf-d3118la.gif") center/cover no-repeat;
+      text-align: center;
+}
+
+header {
+  color: #e1f107;
+  padding: 1px;
+}
+header img {
+      max-width: 150px; /* Adjust the maximum width of the logo */
+      max-height: 150px; /* Adjust the maximum height of the logo */
+    }
+#countdown {
+  font-size: 6em;
+  margin-top: 10px;
+  margin-right: 3em;
+  margin-left: 3em;
+  background: linear-gradient(45deg, rgb(71, 243, 3), #edf102);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 10px;
+  border-radius: 1px;
+  display: flex; /* Use flex display to align items horizontally */
+  justify-content: space-around; /* Add space around items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+}
+footer  {
+    color:rgb(167, 245, 21);
+}
+.countdown-item {
+  font-size: 0.5em;
+  text-align: center;
+  margin: 0; /* Add margin for spacing between items */
+}
+
+#content p {
+    font-size: 1.3em;
+    color: rgb(230, 245, 21);
+  margin-bottom: 7px;
+}
+
+.days-value {
+  font-size: 2em;
+  margin-right: 10px; /* Adjust the margin-right value as needed */
+}
+.days {
+  font-size: 0.5em;
+  margin-right: 10px;
+}
+.hours-value {
+  font-size: 2em;
+  margin-right: 1px;
+}
+.minutes-value {
+  font-size: 2em;
+  margin-right: 1px;
+}
+.seconds-value {
+  font-size: 2em;
+  margin-right: 1px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../Countdown/VVM.png" alt="School Logo">
+    <h1>Welcome to VVM School Annual Day Celebration!</h1>
+  </header>
+
+  <div id="content">
+    <p>Join us on Jan13, 2024 for our Annual Day Celebration!</p>
+    <p>We are thrilled to invite you to this special event filled with joy, excitement, and memorable moments!</p>
+    <p>Get ready for a day packed with fun activities, performances, and surprises!</p>
+    <p>The countdown is on!</p>
+    <div id="countdown">00:00:00</div>
+  </div>
+  
+  <footer>
+    <p>© 2024 VVM CBSC School, Navamarathupatti.</p>
+  </footer>
+
+  <script>
+    // Set the countdown date and time (Jan 13, 2024, 0:00:00)
+    const countdownDate = new Date('Jan 13, 2024 09:00:00').getTime();
+
+    // Function to update the countdown
+    function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = countdownDate - now;
+
+  if (distance < 0) {
+    clearInterval(countdownInterval);
+    document.getElementById('countdown').innerHTML = 'Celebration in progress!';
+  } else {
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('countdown').innerHTML = `
+    <div id="days" class="countdown-item">
+      <span class="days-value">${days}</span><br>Days
+    </div>
+      <div id="hours" class="countdown-item">
+        <span class="hours-value">${hours}</span><br>Hrs</div>
+        <div id="minutes" class="countdown-item">
+        <span class="minutes-value">${minutes}</span><br>Mins</div>
+    <div id="seconds" class="countdown-item">
+        <span class="seconds-value">${seconds}</span><br>Secs</div>
+        `;
+  }
+}
+    // Update the countdown every second
+    const countdownInterval = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
