@@ -1,0 +1,44 @@
+.bg{
+  background-color: #072541;
+  padding: 3%;
+}
+h1,
+h3,
+h5 {
+  text-align: center;
+  
+}
+p{
+  color: rosybrown;
+  text-align: center;
+}
+h1 {
+  color: dodgerblue;
+}
+h3 {
+  color: gold;
+}
+h5 {
+  color: darkgrey;
+}
+.img{
+width: 500px;
+height: 250px;
+display: block; 
+  margin: 0 auto;
+
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 0, auto;
+}
+footer{
+  text-align: center;
+  color: aliceblue;
+  background-color: black;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-top: 5%;
+}

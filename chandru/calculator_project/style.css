@@ -55,15 +55,15 @@ button {
 }
 
 button:hover {
-  background-color: #eee;
+  background-color: #a1eaf2;
 }
 
 .operator {
-  background-color: #f1f1f1;
+  background-color: #fdca50;
 }
 
 .zero {
-  grid-column: span 2;
+  grid-column: #fff4e8;
 }
 
 .equal {
@@ -72,6 +72,6 @@ button:hover {
 }
 
 .clear {
-  background-color: #dc3545;
+  background-color: #b0dc35;
   color: #fff;
 }

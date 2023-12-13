@@ -18,7 +18,7 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
@@ -53,7 +53,7 @@ body {
   }
   
   .status {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin-top: 20px;
   }
   
