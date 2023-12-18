@@ -7,7 +7,9 @@
     <title>Calculator</title>
 </head>
 <body>
+    
     <div id="calculator">
+        <h1>Calculator</h1>
         <input type="text" id="display" disabled>
         <div id="buttons">
             <button onclick="appendValue('1')">1</button>
@@ -26,8 +28,8 @@
             <button onclick="clearDisplay()">C</button>
             <button onclick="performBackspace()">←</button>
             <button onclick="calculateResult()">=</button>
-            <button onclick="appendValue('/')">/</button>
-            
+            <button onclick="appendValue('/')">/</button> 
+            <button onclick="undo('z')">Undo</button>
         </div>
     </div>
     <script src="script.js"></script>

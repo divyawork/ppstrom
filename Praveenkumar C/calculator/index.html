@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Calculator</title>
+    <style>
+        body
+        {
+            background-image: url("https://images.rawpixel.com/image_300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDEzLTA4Mi1rcHhrOW5nay5qcGc.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Simple Calculator</title>
+
 </head>
 <body>
     <div class="calculator">
+        <h1>Calculator</h1><br>
         <input type="text" id="display" readonly>
         <div class="buttons">
             <button onclick="clearDisplay()">C</button>
             <button onclick="appendToDisplay('/')">/</button>
+            
             <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('.')">.</button>
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
@@ -26,7 +41,7 @@
             <button onclick="appendToDisplay('3')">3</button>
             <button onclick="calculateResult()">=</button>
             <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
+            
         </div>
     </div>
     <script src="script.js"></script>
