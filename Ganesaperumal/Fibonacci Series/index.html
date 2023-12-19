@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Series</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+        background-image: url("Bg1.jpg");
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        color: rgb(0, 0, 255);
+      }
+
+      .title-container {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        background-color: green; /* Red color for the title background */
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        color: rgb(255, 255, 255); /* White color for the title text */
+      }
+
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      #top-sections {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      #top-sections section {
+        flex: 1;
+        max-width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        text-align: left;
+      }
+
+      #what-is-fibonacci {
+        background-color: #3498db; /* Blue color */
+        color: #ffffff; /* White color */
+      }
+
+      #history {
+        background-color: #e74c3c; /* Red color */
+        color: #ffffff; /* White color */
+      }
+
+      #applications {
+        background-color: #2ecc71; /* Green color */
+        color: #ffffff; /* White color */
+      }
+
+      #connection-with-nature {
+        background-color: #f39c12; /* Yellow color */
+        color: #000000; /* Black color */
+      }
+
+      #la {
+        background-color: #090d49; /* Purple color */
+        color: #ffffff; /* White color */
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 25px;
+      }
+
+      .container {
+        display: inline-block;
+        padding: 20px;
+        border-radius: 5px;
+        /* background-color: #aea8f2; */
+        margin-right: 20px;
+        gap: initial;
+        vertical-align: top;
+        width: 300px;
+      }
+
+      input {
+        padding: 15px;
+        margin-bottom: 10px;
+        width: 100%;
+        border: 1px solid #d900ff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 18px;
+      }
+
+      button {
+        padding: 15px;
+        cursor: pointer;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background-color: #d900ff;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .result {
+        margin-top: 10px;
+        font-weight: bold;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-container">
+      <h1>FIBONACCI SERIES</h1>
+    </div>
+
+    <div id="top-sections">
+      <section id="what-is-fibonacci">
+        <h2>What is Fibonacci Series?</h2>
+        <p>
+          The Fibonacci series is a sequence of numbers in which each number is
+          the sum of the two preceding ones, usually starting with 0 and 1.
+          <div>Fn = F(n-1) + F(n-2)</div>
+        </p>
+      </section>
+
+      <section id="history">
+        <h2>History</h2>
+        <p>
+          The Fibonacci sequence is named after the Italian mathematician
+          Leonardo Fibonacci, who introduced it to the Western world in his book
+          Liber Abaci, published in 1202.
+        </p>
+      </section>
+
+      <section id="applications">
+        <h2>Applications</h2>
+        <p>
+          The Fibonacci sequence has applications in various fields, including
+          mathematics, computer science, art, nature and closely related to the
+          golden ratio.
+        </p>
+      </section>
+
+      <section id="connection-with-nature">
+        <h2>Connection with Nature</h2>
+        <p>
+          The Fibonacci sequence appears in various aspects of nature, such as
+          the arrangement of leaves on a stem, the formation of pinecones and
+          pineapples, and the spirals of sunflowers.
+        </p>
+      </section>
+    </div>
+
+    <div class="container">
+      <label id="number-label" for="number"
+        >Generate Fibonacci Series up to:</label
+      >
+      <input
+        type="number"
+        id="number"
+        min="1"
+        placeholder="Enter a number"
+        oninput="clearResult('resultGenerate')"
+      />
+      <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+      <div id="resultGenerate" class="result"></div>
+    </div>
+
+    <div class="container">
+      <label id="nth-label" for="nth">Find the nth Fibonacci Number:</label>
+      <input
+        type="number"
+        id="nth"
+        min="1"
+        placeholder="Enter n"
+        oninput="clearResult('resultNth')"
+      />
+      <button onclick="findNthFibonacci()">Find Nth Fibonacci Number</button>
+      <div id="resultNth" class="result"></div>
+    </div>
+
+    <div class="container">
+      <label id="checkFib-label" for="checkFib"
+        >Check if a Number is in Fibonacci Series:</label
+      >
+      <input
+        type="number"
+        id="checkFib"
+        placeholder="Enter a number"
+        oninput="clearResult('resultCheck')"
+      />
+      <button onclick="checkIfInFibonacci()">Check</button>
+      <div id="resultCheck" class="result"></div>
+    </div>
+
+    <script>
+      function clearResult(resultId) {
+        var resultDiv = document.getElementById(resultId);
+        resultDiv.innerHTML = "";
+      }
+
+      function generateFibonacci() {
+        var numberInput = document.getElementById("number");
+        var number = parseInt(numberInput.value);
+
+        if (isNaN(number) || number < 1) {
+          alert("Please enter a valid positive number.");
+          return;
+        }
+
+        var fibonacciSeries = [0, 1];
+        for (var i = 2; i < number; i++) {
+          fibonacciSeries[i] = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];
+        }
+
+        var resultDiv = document.getElementById("resultGenerate");
+        resultDiv.innerHTML = "Fibonacci Series: " + fibonacciSeries.join(", ");
+      }
+
+      function findNthFibonacci() {
+        var nthInput = document.getElementById("nth");
+        var nth = parseInt(nthInput.value);
+
+        if (isNaN(nth) || nth < 1) {
+          alert("Please enter a valid positive number.");
+          return;
+        }
+
+        var a = 0,
+          b = 1,
+          temp;
+        for (var i = 2; i <= nth; i++) {
+          temp = a + b;
+          a = b;
+          b = temp;
+        }
+
+        var resultDiv = document.getElementById("resultNth");
+        resultDiv.innerHTML = "The " + nth + "th Fibonacci Number is: " + a;
+      }
+
+      function checkIfInFibonacci() {
+        var checkFibInput = document.getElementById("checkFib");
+        var checkNumber = parseInt(checkFibInput.value);
+
+        if (isNaN(checkNumber)) {
+          alert("Please enter a valid number.");
+          return;
+        }
+
+        var a = 0,
+          b = 1,
+          temp;
+        while (a <= checkNumber) {
+          if (a === checkNumber) {
+            var resultDiv = document.getElementById("resultCheck");
+            resultDiv.innerHTML = checkNumber + " is in the Fibonacci Series.";
+            return;
+          }
+          temp = a + b;
+          a = b;
+          b = temp;
+        }
+
+        var resultDiv = document.getElementById("resultCheck");
+        resultDiv.innerHTML = checkNumber + " is not in the Fibonacci Series.";
+      }
+    </script>
+  </body>
+</html>
