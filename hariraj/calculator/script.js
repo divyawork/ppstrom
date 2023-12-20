@@ -1,48 +1,58 @@
-<<<<<<< HEAD
 let display = document.getElementById('display');
+let currentInput = '';
 
 function appendToDisplay(value) {
-    display.value += value;
+    currentInput += value;
+    display.textContent = currentInput;
 }
 
 function clearDisplay() {
-    display.value = '';
-=======
-let displayValue = '0';
-
-function updateDisplay() {
-    document.getElementById('display').innerText = displayValue;
+    currentInput = '';
+    display.textContent = '0';
 }
 
-function appendToDisplay(value) {
-    if (displayValue === '0') {
-        displayValue = value;
-    } else {
-        displayValue += value;
-    }
-    updateDisplay();
-}
-
-function clearDisplay() {
-    displayValue = '0';
-    updateDisplay();
->>>>>>> main
-}
-
-function calculateResult() {
+function calculate() {
     try {
-<<<<<<< HEAD
-        display.value = eval(display.value);
+        currentInput = eval(currentInput).toString();
+        display.textContent = currentInput;
     } catch (error) {
-        display.value = 'Error';
+        display.textContent = 'Error';
     }
 }
-=======
-        displayValue = eval(displayValue).toString();
-        updateDisplay();
-    } catch (error) {
-        displayValue = 'Error';
-        updateDisplay();
+document.addEventListener("DOMContentLoaded", function () {
+    let display = document.getElementById('display');
+    let currentInput = '';
+
+    function appendToDisplay(value) {
+        currentInput += value;
+        display.textContent = currentInput;
     }
-}
->>>>>>> main
+
+    function clearDisplay() {
+        currentInput = '';
+        display.textContent = '0';
+    }
+
+    function calculate() {
+        try {
+            const result = Function('"use strict";return (' + currentInput + ')')();
+            currentInput = result.toString();
+            display.textContent = currentInput;
+        } catch (error) {
+            display.textContent = 'Error';
+        }
+    }
+
+    // Add event listeners for each button
+    document.querySelectorAll('.number').forEach(button => {
+        button.addEventListener('click', () => appendToDisplay(button.textContent));
+    });
+
+    document.querySelectorAll('.operator').forEach(button => {
+        button.addEventListener('click', () => appendToDisplay(button.textContent));
+    });
+
+    document.querySelector('.equals').addEventListener('click', calculate);
+
+    document.querySelector('.reset').addEventListener('click', clearDisplay);
+});
