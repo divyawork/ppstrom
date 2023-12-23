@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>   
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    
+</head>
+<body>
+    <div class="main">
+        <form class="bordered">
+            <h1>Fibonacci Sequence</h1>
+            How many numbers in the sequence would you like to calculate?<br>
+            <div class="input">
+                <label for="slider">Pick a number:</label><br>
+                <input type="range" name="slider" id="slider" min="3" max="50" step="1" value="27"> 50<br>
+                Value:<span id="display"></span><br>
+            </div>
+            <button id="submit">Submit</button>
+            <button id="reset">Reset</button>
+        </form>
+        <ul id="list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

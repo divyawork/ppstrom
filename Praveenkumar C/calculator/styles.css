@@ -6,13 +6,17 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
-
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
 .calculator {
     max-width: 400px;
     margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 

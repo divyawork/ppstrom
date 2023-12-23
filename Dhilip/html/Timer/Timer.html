@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Countdown</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 100%);
+            background-image: url(Celebration.gif);
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+       
+
+        #countdown {
+            font-size: 2em;
+        }
+
+        #celebration {
+            animation: celebration 2s infinite alternate;
+        }
+
+        @keyframes celebration {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>New Year starts in <br></h1>
+    <div id="countdown"></div>
+        <script>
+        function updateCountdown() {
+            const now = new Date();
+            const newYear = new Date("January 1, 2024 00:00:00 GMT+00:00");
+            const timeRemaining = newYear - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+        }
+
+        function updateCelebration() {
+            const now = new Date();
+            const newYear = new Date("January 1, 2024 00:00:00 GMT+00:00");
+
+            if (now >= newYear) {
+                document.getElementById("celebration").style.display = "none";
+            }
+        }
+
+        function update() {
+            updateCountdown();
+            updateCelebration();
+        }
+
+        setInterval(update, 1000);
+        update(); // Initial update
+    </script>
+</body>
+</html>
