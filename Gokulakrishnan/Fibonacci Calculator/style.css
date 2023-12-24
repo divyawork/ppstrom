@@ -1,0 +1,72 @@
+body {
+  background-image: url("https://wallpapercave.com/wp/wp4394851.png");
+  background-size: cover; /* This will make the background image fill the screen */
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: "Quicksand", sans-serif;
+  padding-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+p {
+  color: white;
+  text-align: center; /* This will center the paragraph */
+}
+
+.input {
+  width: 200px;
+  display: block; /* This will make the input field a block element */
+  margin: 0 auto; /* This will center the input field */
+  border: 2px solid white; /* This will add a border to the input field */
+  border-radius: 10px; /* This will make the border rounded */
+  padding: 5px; /* This will add some space inside the input field */
+}
+
+.buttons {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: block; /* This will make the buttons div a block element */
+  margin: 10px auto; /* This will center the buttons div */
+  text-align: center; /* This will center the buttons inside the div */
+}
+
+.button {
+  margin-left: 10px;
+  display: inline-block; /* This will make the buttons inline elements */
+  border: none; /* This will remove the default border of the buttons */
+  background-color: white; /* This will change the background color of the buttons */
+  color: black; /* This will change the text color of the buttons */
+  padding: 10px; /* This will add some space inside the buttons */
+  border-radius: 10px; /* This will make the buttons rounded */
+  cursor: pointer; /* This will change the cursor to a pointer when hovering over the buttons */
+}
+
+#clear {
+  margin-left: 20px; /* This will add some space between the clear and submit buttons */
+}
+
+#c {
+  margin-left: 20px; /* This will add some space between the c and clear buttons */
+  background-color: red; /* This will change the background color of the c button */
+  color: white; /* This will change the text color of the c button */
+}
+
+.output {
+  margin-top: 20px;
+  color: black;
+  text-align: center; /* This will center the output text */
+  border: none; /* This will remove the border from the output div */
+  border-radius: 10px; /* This will make the border rounded */
+  padding: 10px; /* This will add some space inside the output div */
+  width: 300px; /* This will set the width of the output div */
+  margin: 0 auto; /* This will center the output div */
+}
+
+#total {
+  color: gold; /* This will change the color of the total message */
+  padding-top: 2rem; /* This will add some space above the total message */
+}

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Poppins:ital,wght@0,400;0,500;1,600&family=Roboto+Condensed:wght@500&family=Young+Serif&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 80px 13%;
+    background-color: rgb(132, 131, 131);
+}
+
+h1{
+    color: #99ff20;
+    font-size: 9vw;
+    margin-bottom: -2.5vw;
+}
+
+p{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 5vw;
+    font-weight: 700;
+    margin-bottom: 4vw;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.container .box {
+    border-radius: 10px;
+    height: 13rem;
+    background: rgba(255, 255, 255, 0.19);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 15px solid #99ff20;
+}
+
+.container .box .caption {
+    color: #e1dbdb;
+    font-size: 20px;
+}
+
+.container .box .count {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.firework_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: fireworks 10s infinite;
+}
+
+@keyframes fireworks {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}

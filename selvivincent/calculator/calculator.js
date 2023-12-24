@@ -1,35 +1,92 @@
-const display = document.getElementById('display');
-let currentInput = '';
+document.addEventListener('DOMContentLoaded', function() {
+  const display = document.getElementById('display');
+  let currentVal = '';
+  let firstVal = null;
+  let operator = null;
 
-function addToDisplay(value) {
-  currentInput += value;
-  display.value = currentInput;
-}
+  document.querySelector('.keys').addEventListener('click', function(event) {
+    const element = event.target;
+    const value = element.dataset.value;
 
-function clearDisplay() {
-  currentInput = '';
-  display.value = '';
-}
+    if (!element.matches('button')) return;
 
-function calculate() {
-  try {
-    const result = eval(currentInput);
-    display.value = result;
-    currentInput = '';
-  } catch (error) {
-    display.value = 'Error';
-  }
-}
-
-document.querySelectorAll('.keys button').forEach(button => {
-  button.addEventListener('click', () => {
-    const buttonValue = button.getAttribute('data-value');
-    if (buttonValue === '=') {
-      calculate();
-    } else if (buttonValue === 'C') {
+    if (value === 'C') {
       clearDisplay();
+    } else if (value === '=') {
+      calculate();
+    } else if (value === '+/-') {
+      negate();
+    } else if (value === '!') {
+      factorial();
+    } else if ('+-*/^'.includes(value)) {
+      handleOperator(value);
     } else {
-      addToDisplay(buttonValue);
+      currentVal += value;
+      display.value = currentVal;
     }
   });
+
+  function clearDisplay() {
+    currentVal = '';
+    firstVal = null;
+    operator = null;
+    display.value = '';
+  }
+
+  function calculate() {
+    if (operator && currentVal !== '') {
+      const secondVal = parseFloat(currentVal);
+      switch (operator) {
+        case '+':
+          currentVal = firstVal + secondVal;
+          break;
+        case '-':
+          currentVal = firstVal - secondVal;
+          break;
+        case '*':
+          currentVal = firstVal * secondVal;
+          break;
+        case '/':
+          currentVal = firstVal / secondVal;
+          break;
+        case '^':
+          currentVal = Math.pow(firstVal, secondVal);
+          break;
+      }
+      display.value = currentVal;
+      firstVal = parseFloat(currentVal);
+      operator = null;
+    }
+  }
+
+  function handleOperator(value) {
+    if (currentVal !== '') {
+      if (firstVal === null) {
+        firstVal = parseFloat(currentVal);
+      } else {
+        calculate();
+      }
+      operator = value;
+      currentVal = '';
+    }
+  }
+
+  function negate() {
+    if (currentVal !== '') {
+      currentVal = -parseFloat(currentVal);
+      display.value = currentVal;
+    }
+  }
+
+  function factorial() {
+    if (currentVal !== '') {
+      const num = parseInt(currentVal);
+      let result = 1;
+      for (let i = 2; i <= num; i++) {
+        result *= i;
+      }
+      currentVal = result;
+      display.value = currentVal;
+    }
+  }
 });
