@@ -3,134 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy New Year 2024 Countdown</title>
+  <title>New Year Countdown Timer</title>
   <style>
     body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(45deg, #0F2027, #203A43, #2C5364); /* Gradient background */
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
-      background: linear-gradient(45deg, #3498db, #e74c3c, #2ecc71, #f39c12);
-      background-size: 400% 400%;
-      animation: gradientAnimation 10s ease infinite;
-      overflow: hidden;
-      color: white;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
+      animation: fadeInUp 2s ease-out; /* Fade in animation */
     }
 
-    .countdown {
-      font-family: 'Arial', sans-serif;
+    #countdown {
       font-size: 2em;
-      text-align: center;
-      margin-bottom: 20px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      animation: fadeInUp 2s ease-out; /* Fade in animation */
     }
 
-    .firework-container {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
+    /* Firework animation */
     .firework {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      animation: explode 1.5s ease-out infinite, moveUp 4s linear infinite;
+      animation: fireworks 2s infinite;
+      opacity: 0;
     }
 
-    .firework1 { background-color: hsl(0, 100%, 50%); } /* Red */
-    .firework2 { background-color: hsl(120, 100%, 50%); } /* Green */
-    .firework3 { background-color: hsl(240, 100%, 50%); } /* Blue */
-    .firework4 { background-color: hsl(60, 100%, 50%); } /* Yellow */
-    .firework5 { background-color: hsl(300, 100%, 50%); } /* Purple */
-
-    @keyframes explode {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(5);
+    @keyframes fireworks {
+      0%, 100% {
+        transform: translateY(0) scale(1);
         opacity: 0;
       }
-    }
-
-    @keyframes moveUp {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-150vh);
-      }
-    }
-
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
       50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
+        transform: translateY(-200px) scale(2);
+        opacity: 1;
       }
     }
+
+    /* Colored fireworks */
+    .firework:nth-child(1) { background: radial-gradient(#FFD700, #FFA500); }
+    .firework:nth-child(2) { background: radial-gradient(#FF6347, #FF4500); }
+    .firework:nth-child(3) { background: radial-gradient(#00FA9A, #008000); }
+    .firework:nth-child(4) { background: radial-gradient(#4169E1, #000080); }
+    .firework:nth-child(5) { background: radial-gradient(#DA70D6, #8B008B); }
   </style>
 </head>
 <body>
-  <h1>Happy New Year 2024!</h1>
-  <div class="countdown" id="countdown"></div>
-  <div class="firework-container" id="firework-container"></div>
 
-  <script>
-    // Set the target date for New Year's Eve 2023
-    const targetDate = new Date('January 1, 2024 00:00:00').getTime();
+<div id="container">
+  <!-- Firework animations -->
+  <div class="firework" style="top: 50px; left: 50px;"></div>
+  <div class="firework" style="top: 100px; left: 150px;"></div>
+  <div class="firework" style="top: 200px; left: 250px;"></div>
+  <div class="firework" style="top: 150px; left: 350px;"></div>
+  <div class="firework" style="top: 100px; left: 450px;"></div>
 
-    // Update the countdown every second
-    const countdownInterval = setInterval(() => {
-      const currentDate = new Date().getTime();
-      const timeDifference = targetDate - currentDate;
+  <!-- <img src="logo.png" alt="New Year Logo"> -->
+  <h1 class="animated-title">Days to go for</h1>
+  <h1 class="animated-title">Happy New Year 2024</h1>
+  <div id="countdown"></div>
+</div>
 
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+<script>
+  // Set the date we're counting down to
+  const countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
 
-      // Display the countdown
-      document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
+  // Update the countdown every 1 second
+  const x = setInterval(function() {
+    // Get the current date and time
+    const now = new Date().getTime();
 
-    // Function to create continuous colorful fireworks
-    function createContinuousFireworks() {
-      setInterval(() => {
-        const firework = document.createElement('div');
-        firework.className = 'firework';
-        firework.style.left = Math.random() * 100 + 'vw';
-        firework.style.top = Math.random() * 100 + 'vh';
-        firework.classList.add(`firework${Math.ceil(Math.random() * 5)}`); // Randomly select one of the firework classes
-        document.getElementById('firework-container').appendChild(firework);
-        setTimeout(() => {
-          firework.remove();
-        }, 4000);
-      }, 1500);
+    // Calculate the time remaining
+    const distance = countDownDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the countdown
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "Happy New Year!";
     }
+  }, 1000);
+</script>
 
-    // Start continuous fireworks
-    createContinuousFireworks();
-    
-  </script>
 </body>
 </html>
