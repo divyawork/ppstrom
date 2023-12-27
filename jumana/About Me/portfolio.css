@@ -211,6 +211,7 @@ main {
 
 #home .home-row h1 span {
     color: var(--themeColor);
+    margin: -10px;
 }
 
 #home .home-row p {
