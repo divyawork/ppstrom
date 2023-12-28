@@ -21,7 +21,8 @@ const calculate = (btnValue) => {
 
 const evaluateExpression = (expression) => {
   try {
-    return String(eval(expression));
+    const result = Function(`'use strict'; return (${expression})`)();
+    return String(result);
   } catch (error) {
     return "Error";
   }

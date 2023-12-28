@@ -1,0 +1,141 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Use 'Poppins' as the modern font */
+}
+
+/* Add a @font-face rule to import the 'Poppins' font */
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fonts.googleapis.com/css?family=Poppins');
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 10px;
+}
+
+.tab {
+    display: none;
+    padding: 20px;
+    font-family: 'Poppins', Arial, sans-serif; /* Use 'Poppins' for tab content as well */
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+In this code, we've added the 'Poppins' font as the primary font for the entire page, and we've used the Google Fonts URL to import the 'Poppins' font. You can replace 'Poppins' with any other modern aesthetic font you prefer. Make sure to include the correct font URL or file path in the @font-face rule if you are using a different font.
+
+
+
+
+User
+modify the html code for horzontal tabs
+ChatGPT
+To create horizontal tabs in the HTML code, you can update the navigation structure to display the tabs horizontally. Here's the modified HTML code with horizontal tabs:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Swathipriya - Full Stack Developer</title>
+</head>
+<body>
+    <header>
+        <h1>Swathipriya</h1>
+        <p>Full Stack Developer</p>
+    </header>
+
+    <nav>
+        <ul class="horizontal-tabs">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="home" class="tab">
+            <h2>Home</h2>
+            <p>Welcome to my personal website. I'm Swathipriya, a passionate full-stack developer with a love for coding and creating web applications.</p>
+        </div>
+
+        <div id="skills" class="tab">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Node.js</li>
+                <li>React</li>
+                <li>Express.js</li>
+                <!-- Add more skills here -->
+            </ul>
+        </div>
+
+        <div id="projects" class="tab">
+            <h2>Projects</h2>
+            <ul>
+                <li>Project 1: Example Project</li>
+                <li>Project 2: Another Project</li>
+                <!-- Add more project details here -->
+            </ul>
+        </div>
+
+        <div id="contact" class="tab">
+            <h2>Contact</h2>
+            <p>You can reach me via:</p>
+            <ul>
+                <li>Email: <a href="mailto:your@email.com">your@email.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">LinkedIn Profile</a></li>
+                <li>GitHub: <a href="https://github.com/yourusername">GitHub Profile</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Swathipriya</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+The key change is adding a class horizontal-tabs to the <ul> element within the <nav>. This class can be used in the CSS to style the tabs horizontally.
+
+
+
+
+
