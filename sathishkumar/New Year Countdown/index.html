@@ -5,7 +5,7 @@
 
     <title>New Year Countdown</title>
     <style>body{background-image: url("images/giphy.gif");</style>
-    
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -29,16 +29,16 @@
 
         // Unix timestamp (in seconds) to count down to
         var distanceCounter =
-          new Date(`January 1, ${nextYear} 00:00:00`).getTime() / 1000;
+          new Date(`January 1, ${nextYear} 00:00:00`). getTime() / 1000;
 
         // Set up FlipDown
         var flipdown = new FlipDown(distanceCounter)
 
           // Start the countdown
-          .start()
+         .start ()
 
           // Do something when the countdown ends
-          .ifEnded(() => {
+          .ifEnded (() => {
             console.log("The countdown has ended!");
           });
 
