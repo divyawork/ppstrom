@@ -5,18 +5,13 @@
   font-family: "Roboto Mono", monospace;
 }
 body {
-  background-image: url("/Ganesaperumal/Calculator/calcBG.jpg");
-  background-size: cover;
-}
-header {
-  color: darkorchid;
-  font-weight: bolder;
-  text-align: center;
+  height: 100vh;
+  background-color: #dadff7;
 }
 .calculator {
   width: 400px;
   background-color: #071013;
-  padding: 10px 20px 20px 20px;
+  padding: 50px 30px 20px 30px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;

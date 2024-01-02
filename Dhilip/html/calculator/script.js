@@ -1,58 +1,20 @@
-let display = document.getElementById('display');
+let displayValue = '';
 
-function appendValue(value) {
-    display.value += value;
+function appendToDisplay(value) {
+    displayValue += value;
+    document.getElementById('display').value = displayValue;
 }
 
 function clearDisplay() {
-    display.value = '';
-}
-
-function performBackspace() {
-    display.value = display.value.slice(0, -1);
+    displayValue = '';
+    document.getElementById('display').value = '';
 }
 
 function calculateResult() {
     try {
-        display.value = eval(display.value);
+        displayValue = eval(displayValue);
+        document.getElementById('display').value = displayValue;
     } catch (error) {
-        display.value = 'Error';
+        document.getElementById('display').value = 'Error';
     }
 }
-function undo() {
-    currentInput = previousInput.slice(0, -1);
-    display.value = previousInput;
-  }
-
-// Listen for keyboard input
-document.addEventListener('keydown', function(event) {
-    const key = event.key;
-
-    // Allow digits, operators, Enter key, and backspace
-    if (/[0-9+\-*/= Backspace \n\b]/.test(key)) {
-        event.preventDefault();
-
-        if (key === 'Enter') {
-            calculateResult();
-            return;
-        } 
-        else if (key === 'Backspace') {
-            performBackspace();
-            return;
-        }
-        else if (key === 'Escape') {
-            clearDisplay();
-            return;
-        }
-        else if (key === 'Delete') {
-            performBackspace();
-            return;
-        }
-        else if (key === 'z') {
-            undo();
-            return;              
-        }
-
-        appendValue(key);
-    }
-});
