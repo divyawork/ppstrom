@@ -1,0 +1,222 @@
+body {
+  color: #40514e;
+  margin: 0;
+  text-align: center;
+  font-family: "Merriweather", serif;
+}
+h1 {
+  line-height: 2;
+  color: #66bfbf;
+  font-size: 5.625rem;
+  margin: 50px auto 0 auto;
+  font-family: "Sacramento", cursive;
+}
+h2 {
+  font-weight: normal;
+  color: #66bfbf;
+  font-size: 2.5rem;
+  font-family: "Montserrat", san-serif;
+}
+h3 {
+  color: #11999e;
+  font-family: "Montserrat", san-serif;
+}
+.top-container {
+  background-color: #eaf6f6;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+.bottom-container {
+  padding: 30px 0 20px;
+  background-color: #66bfbf;
+}
+.bottom-cloud {
+  position: absolute;
+}
+.top-cloud {
+  position: relative;
+  margin-left: 500px;
+}
+.pro {
+  text-decoration: underline;
+}
+.tech {
+  border-radius: 50%;
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+  border: 2px solid black;
+}
+.skill {
+  border-radius: 50%;
+  width: 25%;
+  float: left;
+  margin-right: 30px;
+  border: 2px solid black;
+}
+.prof {
+  border-radius: 50%;
+  width: 40%;
+  border: 2px solid black;
+}
+.skill-row {
+  text-align: left;
+  line-height: 2;
+  width: 50%;
+  margin: 100px auto 100px auto;
+}
+.front {
+  font-family: "Poppins", sans-serif;
+}
+.profile {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 100px auto;
+}
+hr {
+  border-style: dotted;
+  border-color: grey;
+  border-top: 2px;
+  border-width: 5px;
+  height: 0;
+  width: 50px;
+}
+.btn {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: "Montserrat", san-serif;
+  color: #ffffff;
+  font-size: 16px;
+  background: #66bfbf;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: green;
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.footer-link1 {
+  font-family: "Montserrat", san-serif;
+  padding-right: 50px;
+  color: #2b7a7c;
+  text-decoration: none;
+}
+.footer-link2 {
+  font-family: "Montserrat", san-serif;
+  padding-right: 50px;
+  color: #2b7a7c;
+  text-decoration: none;
+}
+.footer-link3 {
+  font-family: "Montserrat", san-serif;
+  color: #2b7a7c;
+  text-decoration: none;
+}
+.pdesc2 {
+  color: #eaf6f6;
+  font-size: 0.75rem;
+  padding: 20px 0;
+}
+p {
+  line-height: 2;
+}
+.personal-bio {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+}
+.para {
+  width: 40%;
+  margin: 40px auto 40px auto;
+}
+.footer-link1:hover {
+  color: gold;
+}
+.footer-link2:hover {
+  color: gold;
+}
+.footer-link3:hover {
+  color: gold;
+}
+/* I have added some styles for the projects section */
+.projects {
+  width: 50%;
+  margin: 0 auto 100px auto;
+  text-align: center;
+}
+
+/* I have styled the container for the cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* I have styled each card as a link */
+.card {
+  width: 230px;
+  height: 230px;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #40514e;
+  font-family: "Merriweather", serif;
+}
+
+/* I have styled the image and text inside each card */
+.card-img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.card-text {
+  width: 100%;
+  height: 25%;
+  line-height: 1;
+  text-align: center;
+}
+
+/* I have added some hover effects for the cards */
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px grey;
+}
+
+/* I have added some media queries to make the cards responsive */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .card {
+    width: 20%;
+  }
+}

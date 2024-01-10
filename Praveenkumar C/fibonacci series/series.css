@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    color: #94050c;
+}
+
+.fibonacci-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em; /* Larger letters */
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.fibonacci-result {
+    font-size: 2em; /* Larger letters for result */
+    margin-top: 20px;
+    font-weight: bold;
+}
