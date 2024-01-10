@@ -1,0 +1,76 @@
+body {
+   
+    background: url(fib1.jpg.webp);
+    background-repeat: no-repeat;
+    background-size: 1375px;
+    
+    
+}
+
+h1 { 
+    color: rgb(232, 230, 243); 
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS';
+    font-style: bold;
+    margin-bottom: -5px; 
+} 
+
+.fib {
+    padding: 10px;
+    font-family: verdana;
+    font-size: 50 px;
+    color: #f1e7e7;
+    
+  }
+  .fib input[type="text"] {
+    padding: 10 10px;
+    outline: none;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    border: thick;
+    border: solid thick #42cae2;
+    
+  }
+  .fib button {
+    background: #070707;
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    display: inline-block;
+    align-items: center;
+    margin-left: 10px;
+    padding: 0 10px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  #result {
+    padding: 20px 0 0;
+  }
+  #result strong {
+    color: #ff0000;
+  }
+  .fib ul {
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .fib ul li {
+    padding: 8px 10px;
+     color: #f1e7e7;
+    font-weight: 600;
+  }
+  
+
+  @media screen and (max-width:720px)
+  {
+    .fib input[type="text"],.fib button
+    {
+      width:100%;
+      box-sizing:border-box;
+      margin:10px 0 0;
+    }
+  }
