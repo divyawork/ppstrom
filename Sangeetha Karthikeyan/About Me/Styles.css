@@ -62,3 +62,15 @@ body, h1, h2, p {
     /* Set a background color in case the background image is not available or visible */
     background-color: #f4f4f4; /* You can set any color as a fallback */
   }
+
+  footer img {
+    width: 40px; /* Adjust size as per your requirement */
+    height: 40px; /* Adjust size as per your requirement */
+    margin: 0 10px; /* Adjust spacing between images */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+/* Adding hover effect to footer images */
+footer img:hover {
+    transform: scale(1.1); /* Slightly scale the image on hover */
+}
