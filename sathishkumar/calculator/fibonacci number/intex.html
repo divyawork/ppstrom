@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Calculator</title>
+  <style>
+    body {
+      background-image: url('image.jpg'); /* Replace with your image file URL */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+      background-size: cover;
+      background-position: center;
+      color: #ffffff; /* Text color */
+    }
+
+    h1 {
+      color: #ff4800; /* Heading color */
+    }
+
+    label, button {
+      color: #333333; /* Label and button text color */
+    }
+
+    input {
+      color: #333333; /* Input text color */
+    }
+
+    button {
+      background-color: #4CAF50; /* Button background color */
+      color: #ffffff; /* Button text color */
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049; /* Button background color on hover */
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fibonacci Calculator</h1>
+
+  <label for="numInput">Enter the number of terms:</label>
+  <input type="number" id="numInput" min="1" step="1" value="1">
+  <button onclick="calculateFibonacci()">Calculate</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateFibonacci() {
+      var numTerms = document.getElementById("numInput").value;
+      var result = document.getElementById("result");
+
+      if (numTerms <= 0) {
+        result.innerHTML = "Please enter a positive integer.";
+        return;
+      }
+
+      var fibSequence = [0, 1];
+      for (var i = 2; i < numTerms; i++) {
+        fibSequence[i] = fibSequence[i - 1] + fibSequence[i - 2];
+      }
+
+      result.innerHTML = "Fibonacci sequence: " + fibSequence.join(", ");
+    }
+  </script>
+</body>
+</html>
