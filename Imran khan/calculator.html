@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Calculator</title>
+  <style>
+    body {
+      background: url('https://cdn.wallpapersafari.com/21/24/xDvZSe.jpg') center/cover;
+      padding: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      align-items: center;
+      justify-content: center; 
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 1px;
+      background-color: #999;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    } 
+
+    .calculator-grid button {
+      font-size: 25px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Mono', monospace;
+    } 
+
+    textarea {
+      grid-column: span 4;
+      font-family: 'DM Mono', monospace;
+      font-size: 25px;
+      text-align: end;
+      background-color: #fad3cb;
+      padding: 15px;
+      border: none;
+    }
+
+    .calculator-grid button:nth-child(n+18) {
+      background-color: tomato; 
+    }
+
+    button:hover,
+    .calculator-grid button:nth-child(n+18):hover {
+      background-color: #440b15;
+      color: white;
+      transition: 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align: center; color: white;">Calculator</h1>
+
+<div class="grid-container">
+  <div class="calculator-grid">
+    <textarea type="text" id="inputtext" placeholder="0"></textarea>
+    <button>C</button>
+    <button>DEL</button>
+    <button></button>
+    <button>+</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>-</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>*</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>/</button>
+    <button>00</button>
+    <button>0</button>
+    <button>.</button>
+    <button>=</button>
+  </div>
+</div>
+
+<script>
+  const input = document.getElementById('inputtext');
+  const buttons = document.querySelectorAll('button');
+
+  function calculate(expression) {
+    try {
+      return new Function('return ' + expression)();
+    } catch (error) {
+      return 'Malformed Operation';
+    }
+  }
+
+  function operation(buttonValue) {
+    if (buttonValue === 'C') {
+      input.value = '';
+    } else if (buttonValue === 'DEL') {
+      input.value = input.value.slice(0, -1);
+    } else if (buttonValue === '=') {
+      input.value = calculate(input.value);
+    } else {
+      input.value += buttonValue;
+    }
+  }
+
+  buttons.forEach(button => {
+    let buttonValue = button.innerText;
+    button.addEventListener('click', function () {
+      operation(buttonValue);
+    });
+  });
+</script>
+
+</body>
+</html>

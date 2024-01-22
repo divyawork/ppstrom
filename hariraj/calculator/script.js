@@ -1,5 +1,5 @@
-let display = document.getElementById("display");
-let currentInput = "";
+let display = document.getElementById('display');
+let currentInput = '';
 
 function appendToDisplay(value) {
     currentInput += value;
@@ -7,35 +7,52 @@ function appendToDisplay(value) {
 }
 
 function clearDisplay() {
-    currentInput = "";
-    display.textContent = "0";
+    currentInput = '';
+    display.textContent = '0';
 }
 
-function calculateResult() {
+function calculate() {
     try {
         currentInput = eval(currentInput).toString();
         display.textContent = currentInput;
     } catch (error) {
-        display.textContent = "Error";
+        display.textContent = 'Error';
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    let display = document.getElementById('display');
+    let currentInput = '';
 
-// Create buttons dynamically
-const buttonValues = ['7', '8', '9', '+', '4', '5', '6', '-', '1', '2', '3', '*', '0', '=', '/'];
-const buttons = document.querySelector(".buttons");
+    function appendToDisplay(value) {
+        currentInput += value;
+        display.textContent = currentInput;
+    }
 
-buttonValues.forEach((value) => {
-    const button = document.createElement("button");
-    button.textContent = value;
-    button.className = "button";
-    button.addEventListener("click", () => {
-        if (value === "=") {
-            calculateResult();
-        } else if (value === "C") {
-            clearDisplay();
-        } else {
-            appendToDisplay(value);
+    function clearDisplay() {
+        currentInput = '';
+        display.textContent = '0';
+    }
+
+    function calculate() {
+        try {
+            const result = Function('"use strict";return (' + currentInput + ')')();
+            currentInput = result.toString();
+            display.textContent = currentInput;
+        } catch (error) {
+            display.textContent = 'Error';
         }
+    }
+
+    // Add event listeners for each button
+    document.querySelectorAll('.number').forEach(button => {
+        button.addEventListener('click', () => appendToDisplay(button.textContent));
     });
-    buttons.appendChild(button);
+
+    document.querySelectorAll('.operator').forEach(button => {
+        button.addEventListener('click', () => appendToDisplay(button.textContent));
+    });
+
+    document.querySelector('.equals').addEventListener('click', calculate);
+
+    document.querySelector('.reset').addEventListener('click', clearDisplay);
 });
