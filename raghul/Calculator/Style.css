@@ -9,6 +9,7 @@ body {
 
 .calculator {
     background-color: #cac0c086;
+    text-align: center;
     width: 320px;
     border-radius: 10px;
     padding: 20px;
