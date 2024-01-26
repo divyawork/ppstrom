@@ -1,108 +1,105 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Countdown</title>
 
-body {
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite; 
-    overflow: hidden;  
-}
+  <style>
+    body {
+      background-image: url(images/crackers.gif); 
+      background-size: cover;
+      overflow: hidden;
+    }
 
+    @keyframes firework1 {
+      0% {   
+        transform: translateY(200px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+      }
+    }
 
+    @keyframes firework2 {   
+      0% {
+        transform: translate(50px, -10px) rotate(-180deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-1000px, 1000px) rotate(-180deg);
+        opacity: 0;
+      }  
+    }
 
-@keyframes firework1 {
-  0% {   
-    transform: translateY(200px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-}
+    .firework1, .firework2 {
+      position: absolute;
+      left: 50%; 
+      width: 5px;
+      height: 20px;
+      margin-left: -2px; 
+      background-color: #fff; 
+    }
 
-@keyframes firework2 {   
-  0% {
-    transform: translate(50px, -10px) rotate(-180deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-1000px, 1000px) rotate(-180deg);
-    opacity: 0;
-  }  
-}
+    .firework1 {
+      animation: firework1 5s infinite;  
+    }
 
-.firework1, .firework2 {
-  position: absolute;
-  left: 50%; 
-  width: 5px;
-  height: 20px;
-  margin-left: -2px; 
-  background-color: #fff; 
-}
+    .firework2 { 
+      animation: firework2 4s infinite;
+    }
 
-.firework1 {
-  animation: firework1 5s infinite;  
-}
+    #timer {
+      position: absolute;
+      bottom: 20%; 
+      left: 50%;
+      transform: translateX(-50%); 
+      font-size: 48px;
+      font-family: sans-serif;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      display: flex; 
+      align-items: center;
+    }
 
-.firework2 { 
-  animation: firework2 4s infinite;
-}
+    #timer i { 
+      margin: 0 10px;  
+      font-size: 48px;
+    }
 
+    #message {
+      position: absolute;
+      top: 20%; 
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 80px;
+      font-family: Montserrat; 
+      color:  #8499bc;
+      text-shadow: 2px 2px 4px rgba(144, 166, 211, 0.7);
+      background: linear-gradient(45deg,#cdbd08, #7dad80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-
-#timer {
-  position: absolute;
-  bottom: 20%; 
-  left: 50%;
-  transform: translateX(-50%); 
-  
-  font-size: 48px;
-  font-family: sans-serif;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  
-  display: flex; 
-  align-items: center;
-}
-
-#timer i { 
-  margin: 0 10px;  
-  font-size: 48px;
-}
-  
-
-
-#message {
-  position: absolute;
-  top: 20%; 
-  left: 50%;
-  transform: translateX(-50%);
-  
-  font-size: 70px;
-  font-family: Montserrat; 
-  color: #0a1f44;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-
-
-#year {
-  position: absolute;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  font-size: 128px;
-  font-family: Montserrat; 
-  color: #0a1f44; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-  
-</style>
+    #year {
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 128px;
+      font-family: Montserrat; 
+      color: #8499bc; 
+      text-shadow: 2px 2px 4px rgba(144, 166, 211, 0.7);
+      background: linear-gradient(45deg, #cdbd08, #7dad80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
 </head>
-
 <body>
 
 <div id="timer">
@@ -125,30 +122,26 @@ body {
 <div class="firework2" style="left: 80%;"></div> 
 
 <script>
+  var countDownDate = new Date("January 1, 2024 00:00:00").getTime();
 
-var countDownDate = new Date("January 1, 2024 00:00:00").getTime();
+  updateTimer();
 
-updateTimer();
+  function updateTimer() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
 
-function updateTimer() {
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
+    document.getElementById("days").innerHTML = days; 
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes; 
+    document.getElementById("seconds").innerHTML = seconds;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("days").innerHTML = days; 
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes; 
-  document.getElementById("seconds").innerHTML = seconds;
-
-  setTimeout(updateTimer, 1000);
-
-}
-
+    setTimeout(updateTimer, 1000);
+  }
 </script>
 
 </body>

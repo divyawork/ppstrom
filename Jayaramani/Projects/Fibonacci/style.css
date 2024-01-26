@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    background: url("https://wallpapercave.com/wp/wp4394804.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main {
+    background: linear-gradient(45deg, #f789f1a8, #d36cec, #926cec ); /* Light green to Light blue gradient */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fib {
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    color: #333; /* Dark text for contrast */
+}
+
+.fib input[type="text"] {
+    padding: 0 10px;
+    outline: none;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    border: solid thin #ccc;
+}
+
+.fib button {
+    background: linear-gradient(45deg, #1abc9c, #3498db); /* Light green to Light blue gradient */
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 0 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+    padding: 20px 0 0;
+}
+
+#result strong {
+    color: #e74c3c; /* Light red for emphasis */
+}
+
+.fib ul {
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.fib ul li {
+    padding: 8px 10px;
+    background: #ecf0f1; /* Light background color */
+    color: #333; /* Dark text for contrast */
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fib ul li:nth-child(2n) {
+    background: #d5dbdb; /* Light gray for alternate rows */
+}
+
+@media screen and (max-width: 720px) {
+    .fib input[type="text"],
+    .fib button {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 10px 0 0;
+    }
+}
