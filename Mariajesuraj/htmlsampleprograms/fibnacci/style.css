@@ -1,0 +1,35 @@
+
+
+body {
+
+    background-image: url(fiba.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    
+}
+h1{
+    font:bolder;
+    font-family: 'Trebuchet MS';
+    size: 1000px;
+    color:rgb(240, 249, 255);
+    font-style:italic;
+}
+
+
+.container {
+    text-align: center;
+    color:white;
+    size: 200px;
+    font-family: 'Trebuchet MS';
+    display: block;
+    font-size: larger;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS';
+    cursor: pointer;
+    color: black;
+}
