@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top: 40px;
+  background-color: #f0f0f0;
+}
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-self: center;
+}
+.name {
+  font-family: "Varela Round", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #ec700b;
+  text-align: right;
+}
+h3 {
+  color: #43766c;
+  font-family: "Outfit", sans-serif;
+}
+
+.role {
+  font-family: "Urbanist", sans-serif;
+  font-size: 24px;
+  font-style: italic;
+  color: #666666;
+  text-align: right;
+}
+
+.space {
+  text-align: right;
+}
+.space {
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+.about {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  /* color: #333333; */
+  margin-bottom: 20px;
+}
+
+.bio {
+  font-family: "Times New Roman";
+  font-size: 20px;
+  text-align: justify;
+
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.projects {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #43766c;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  padding-bottom: 10%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 88px;
+  padding: 10px;
+  padding-right: 10px;
+
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.copy {
+  padding-right: 10%;
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+}
+
+.social {
+  float: right;
+  text-align: center;
+}
+
+.social-icon {
+  float: right;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
