@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('image/bgcolor.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+  
+  #weatherDetails {
+    display:grid;
+    align-items: center; 
+  }
+  
+  .temperature {
+    font-size: 45px;
+    color: #fcfbfb;
+    margin-bottom: 0px;
+  }
+  
+  .weather-description {
+      font-size: 25px;
+    font-style: italic; 
+    color: #fbfbfd;
+    margin-top: 0px; 
+  }
+  #cloudImage {
+    padding:0rem;
+    width: 120px;
+    height: 120px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+   
+  }
+  .weather-app {
+    width: 60%;
+    max-width: 300px;
+    background: linear-gradient(to bottom, #4d6be3, #b21f1f, #fdbb2d);
+    padding: 40px 35px;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    text-align: center;
+    
+  }
+  
+  
+  #windSpeed {
+    font-size: 18px; 
+    margin-top: 5px;
+    color: #ebfffc
+  }
+  #humidity {
+    color: #ebfffc;
+    font-size: 18px;
+  }
+  .city-name {
+    
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+      color: #fbfbfd
+  }
+  
+  #dateTime {
+    padding: 5%;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    font-weight: bold;
+    color: #f8f7f7; 
+  }
+  
+  
+  .search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-container input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 40px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+  }
+  .search-container button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  .search-container button img {
+    width: 30px;
+  }
+  
+  .forecast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .forecast-icon {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+  
+  .day {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .temperature {
+    margin-top: 5px;
+  }
+  
