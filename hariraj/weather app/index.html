@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamic Weather APP</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+
+<body>
+    <!--Code for City Search-->
+    <div class="container">
+        <div id="h1Wrap" class="row">
+            <h1> Dynamic Weather Application <br> by HARI </h1>
+        </div>
+        <div class="row">
+            <div id="formLWrap" class="col-4">
+                <form id="Search">
+                    <!--Input Field To Search for New Cities-->
+                    <label for="cityQuery">Search For A City:</label><br>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="cityQuery" />
+                        <!--Button type="submit" to trigger new movie addition-->
+                        <div class="input-group-append">
+                            <input id="addCitybtn" type="submit" value="Add A City" />
+                        </div>
+                    </div>
+                </form>
+                <!--Element For Dynamic Buttons-->
+                <div id="buttons-view"></div>
+            </div>
+            <div class="col-8">
+                <div class="todaysWeatherBlock">
+                    <h2 class="city"></h2>
+                    <div id="icon"><img class="wIcon" src=""></div>
+                    <div class="temp"></div>
+                    <div class="weatherDescription"></div>
+                    <div class="humidity"></div>
+                    <div class="wind"></div>
+                    <div class="uvIndex"></div>
+
+                    <div id="fiveDayWrap" class="container">
+                        <div class="row">
+                            <div id="showWeatherForecast"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./script.js"></script>
+
+
+
+
+</body>
+</html>
