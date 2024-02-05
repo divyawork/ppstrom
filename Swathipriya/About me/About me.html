@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-dcdoejMOEAhDPLa6BE4stJEfAwmJ/YhAJ+fqjhVUE2XY8H9O7OfUqbjRv6L4SkjFDtFYTB9MFUWYGL0lKNnZQQ==" crossorigin="anonymous" />
+
+  <title>Your Portfolio</title>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #E0D7FF;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #FFCCE1;
+      color: black
+      text-align: center;
+      padding: 1em;
+    }
+
+    nav {
+      background-color: #3498db;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    footer {
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Swathipriya</h1>
+    <p>Full Stack Developer</p>
+  </header>
+
+  <nav>
+    <a onclick="showTab('aboutMe')">About Me</a>
+    <a onclick="showTab('skills')">Skills</a>
+    <a onclick="showTab('projects')">Projects</a>
+    <a onclick="showTab('contact')">Contact</a>
+  </nav>
+
+  <section id="aboutMe" class="active">
+    <h2>About Me</h2>
+    <p>Hello, I'm Swathipriya, a dedicated full-stack developer with one year of hands-on experience in creating dynamic and scalable web applications. My journey into programming started with curiosity and has grown into a commitment to delivering innovative solutions that blend functionality with an outstanding user experience.
+
+Proficient across the software development life cycle, I specialize in designing responsive user interfaces using frameworks like React.js and Vue.js. On the back end, I leverage technologies such as Node.js and Express to create robust and efficient systems.
+
+I thrive in collaborative environments, ensuring effective communication within cross-functional teams for a seamless development process. Beyond coding, I see myself as a problem solver, tackling complex issues to produce elegant, maintainable code.
+
+Constant learning is fundamental to my development approach, and I stay updated on industry trends and emerging technologies. This commitment allows me to deliver cutting-edge solutions that meet the evolving demands of the digital landscape.
+
+Explore my portfolio to discover more about the projects I've undertaken and the technologies I've mastered. I'm enthusiastic about the opportunity to contribute my skills and passion to your next project. Let's collaborate and build something extraordinary together!</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>Css</li>
+      <li>JavaScript</li>
+      <li>Node.js</li>
+      <li>React</li>
+      <!-- Add more skills as needed -->
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+  <iframe href="Swathipriya/Tic tac toe/ Tic tac toe.html"> Tick toc toe</iframe>
+    <!-- Add details about your projects here -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: swathipriya.ce@gmail.com</p>
+
+    <!-- Social Media Links -->
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/swathi-priya-50116377/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/swathiriya/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/Swathipriya04" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+</section>
+
+  <footer>
+    &copy; 2024 Swathipriya
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      const activeSection = document.getElementById(tabId);
+      activeSection.classList.add('active');
+    }
+  </script>
+</body>
+</html>

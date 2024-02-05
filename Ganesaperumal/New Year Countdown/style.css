@@ -167,7 +167,7 @@ h1:after {
   content: "";
   position: absolute;
   bottom: 20px;
-  left: 115px;
+  left: 60px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -177,7 +177,7 @@ h1:after {
   content: "";
   position: absolute;
   bottom: 50px;
-  left: 115px;
+  left: 60px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -188,7 +188,7 @@ h1:after {
   float: left;
   width: 50px;
   height: 80px;
-  margin: 0px 5px 0px 0px;
+  margin: 0px 0px 0px 0px;
   border-radius: 4px;
   font-size: 4rem;
   text-align: center;

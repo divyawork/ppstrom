@@ -1,0 +1,63 @@
+  /* Input Element Modification: Begin */
+
+        /* Main Input Element */
+
+        #cityQuery {
+            background: white;
+            min-width: 7em;
+            
+        }
+
+        /* Button for Adding A New City to Dynamic List */
+
+        #addCitybtn {
+            background: #688ba3;
+            color: white;
+        }
+
+        #formLWrap {
+            background: #c7c1bb;
+        }
+
+        /* Dynamic Btn Object, Displaying Weather, Below */
+        .newCity {
+            display: block;
+            width: 100%;
+            margin: 2% 0 0 0;
+        }
+
+        /* Input Elements: End */
+
+        /* Five-Day Forecast Elements */
+
+        .five_day_div {
+            background: #4c9cb5;
+            max-width: 18%;
+            height: auto;
+            color: white;
+            display: inline-block;
+            margin: 3% 1% 1% 1%;
+            padding: 1% 1% 1% 1%;
+        }
+
+        /* Five-Day Forecast Wrapper */
+        #showWeatherForecast {
+            margin: 2em 0 0 0;
+            background: #d3d3d3;
+        }
+
+        /* Elements */
+        h1 {
+            color: white;
+            width: 100%;
+        }
+
+        #h1Wrap {
+            background: radial-gradient(#3106ce 60%, black 40%);
+            text-align: center;
+ font-family: Verdana, 'Times New Roman', Times, serif, sans-serif
+        }
+
+        .card-text {
+            height: 48px;
+        }
