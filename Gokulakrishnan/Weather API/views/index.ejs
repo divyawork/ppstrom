@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gk - Weather</title>
+  </head>
+  <body>
+    <h1>Gk Weather Forecast</h1>
+    <form id="weatherForm">
+      <label for="cityInput">Enter City:</label>
+      <input type="text" id="cityInput" name="city" required />
+      <button type="submit">Get Weather</button>
+    </form>
+    <div id="weatherResult"></div>
+
+    <script>
+      document
+        .getElementById("weatherForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const city = document.getElementById("cityInput").value;
+
+          fetch(`/weather?city=${city}`)
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("weatherResult").innerHTML = `
+                <h2>Weather in ${data.city}</h2>
+                <p>Temperature: ${data.temperature}°C</p>
+                <p>Description: ${data.description}</p>
+                <p>Humidity: ${data.humidity}%</p>
+                <p>Pressure: ${data.pressure} hPa</p>
+                <p>Wind Speed: ${data.windSpeed} m/s</p>
+              `;
+            })
+            .catch((error) => {
+              console.error("Error fetching weather data:", error);
+              document.getElementById("weatherResult").innerHTML =
+                "<p>Error fetching weather data.</p>";
+            });
+        });
+    </script>
+  </body>
+</html>
