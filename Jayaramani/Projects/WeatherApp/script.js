@@ -1,5 +1,6 @@
 const cityInput = document.getElementById('cityInput');
 const searchBtn = document.getElementById('searchBtn');
+const forecastContainer = document.getElementById('forecastContainer');
 const cloudImage = document.getElementById('cloudImage');
 const windSpeed = document.getElementById('windSpeed');
 const humidity = document.getElementById('humidity');
@@ -13,6 +14,7 @@ searchBtn.addEventListener('click', () => {
   const cityName = cityInput.value.trim();
   if (cityName !== '') {
     getWeatherData(cityName);
+    getForecastData(cityName);
   }
 });
 
@@ -21,9 +23,11 @@ cityInput.addEventListener('keyup', (event) => {
     const cityName = cityInput.value.trim();
     if (cityName !== '') {
       getWeatherData(cityName);
+      getForecastData(cityName);
     }
   }
 });
+
 
 async function getWeatherData(city) {
   const url = `${apiUrl}?q=${city}&appid=${apiKey}&units=metric`;
@@ -34,7 +38,7 @@ async function getWeatherData(city) {
     const data = await response.json();
 
     updateWeatherUI(data);
-    getForecastData(data.coord);
+    
   } catch (error) {
     console.error('Error fetching weather data:', error);
   }
@@ -70,76 +74,78 @@ function updateWeatherUI(data) {
     }
   }
 
-  function getCloudImage(description) {
-    // Add conditions based on weather descriptions
-    if (description.includes('clouds')) {
-      return 'image/cloud1.png'; // Use cloud image for cloudy weather
-    } else if (description.includes('clear')) {
-      return 'image/sun1.png'; // Use sun image for clear weather
-    } else if (description.includes('rain')) {
-      return 'image/rain-icon.png';
-    } else if (description.includes('fog')) {
-      return 'image/fog.png';
-    } else if (description.includes('haze')) {
-      return 'image/haze.png';// Use rain image for rainy weather
-    } else {
-      return 'image/placeholder.png'; // Default image if no match
-    }
-  }
-
-
-
-const forecastContainer = document.getElementById('forecastContainer');
-
+  
 async function getForecastData(city) {
-
   const forecastUrl = `${apiforecastUrl}?q=${city}&appid=${apiKey}&units=metric`;
   try {
     const forecastResponse = await fetch(forecastUrl);
     const forecastData = await forecastResponse.json();
-    if (forecastData.hasOwnProperty('daily')) {
-      updateForecastUI(forecastData);
-    } else {
-      console.error('Error: daily property not found in forecastData object');
-    }
+    console.log('Forecast Data:', forecastData); // Add this line for debugging
 
-    updateForecastUI(forecastData);
+    if (forecastData.hasOwnProperty('list')) {
+      updateForecastUI(forecastData.list);
+    } else {
+      console.error('Error: list property not found in forecastData object');
+    }
   } catch (error) {
     console.error('Error fetching forecast data:', error);
   }
 }
 
-function updateForecastUI(forecastData) {
-  const dailyForecasts = forecastData.daily;
-
-  
+function updateForecastUI(dailyForecasts) {
   forecastContainer.innerHTML = '';
 
-  
+  const uniqueDays = new Set();
+
   dailyForecasts.forEach((day) => {
-    const forecastDate = new Date(day.dt * 1000); 
+    const forecastDate = new Date(day.dt * 1000);
     const dayName = getDayName(forecastDate.getDay());
-    const temperatureMax = day.temp.max;
-    const temperatureMin = day.temp.min;
-    const weatherDescription = day.weather[0].description;
 
-    // Create forecast card
-    const forecastCard = document.createElement('div');
-    forecastCard.classList.add('forecast-card');
-    forecastCard.innerHTML = `
-      <p class="day">${dayName}</p>
-      <img src="${getCloudImage(weatherDescription)}" alt="${weatherDescription}" class="forecast-icon">
-      <p class="temperature">${Math.round(temperatureMax)}°C / ${Math.round(temperatureMin)}°C</p>
-    `;
+    // Check if the day is already added
+    if (!uniqueDays.has(dayName)) {
+      uniqueDays.add(dayName);
 
-        forecastContainer.appendChild(forecastCard);
+      const temperatureMax = day.main.temp_max;
+      const temperatureMin = day.main.temp_min;
+      const weatherDescription = day.weather[0].description;
+
+      // Create forecast card
+      const forecastCard = document.createElement('div');
+      forecastCard.classList.add('forecast-card');
+      forecastCard.innerHTML = `
+        <p class="day">${dayName}</p>
+        <img src="${getCloudImage(weatherDescription)}" alt="${weatherDescription}" class="forecast-icon">
+        <p class="temp">${Math.round(temperatureMax)}°C / ${Math.round(temperatureMin)}°C</p>
+      `;
+
+      forecastContainer.appendChild(forecastCard);
+    }
   });
 }
+
+
+
 
 function getDayName(dayIndex) {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   return daysOfWeek[dayIndex];
 }
 
+function getCloudImage(description) {
+  // Add conditions based on weather descriptions
+  if (description.includes('clouds')) {
+    return 'image/cloud1.png'; // Use cloud image for cloudy weather
+  } else if (description.includes('clear')) {
+    return 'image/sun1.png'; // Use sun image for clear weather
+  } else if (description.includes('rain')) {
+    return 'image/rain-icon.png';
+  } else if (description.includes('fog')) {
+    return 'image/fog.png';
+  } else if (description.includes('haze')) {
+    return 'image/haze.png';// Use rain image for rainy weather
+  } else {
+    return 'image/placeholder.png'; // Default image if no match
+  }
+}
 
 
