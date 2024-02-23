@@ -1,26 +1,47 @@
-const days = document.querySelector('#days');
-const hours = document.querySelector('#hours');
-const minutes = document.querySelector('#minutes');
-const seconds = document.querySelector('#seconds');
+const fireworkContainer = document.querySelector('.fireworks-container')
+const daysSpan = document.querySelector('#days')
+const hoursSpan = document.querySelector('#hours')
+const minutesSpan = document.querySelector('#minutes')
+const secondsSpan = document.querySelector('#seconds')
+const newYear = document.querySelector('#new-year')
 
-const currentYear = new Date().getFullYear();
-const nextYear = currentYear + 1;
+const now = new Date()
 
-console.log("currentYear: ", currentYear)
-console.log("nextYear: ", nextYear)
+newYear.innerHTML = now.getFullYear() + 1
 
-setInterval(() => {
+const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime()
 
-    const currentDate = new Date();
-    const newYearDate = new Date(`January 01 ${nextYear} 00:00:00`);
-    const totalSeconds = (newYearDate - currentDate) / 1000;
-    
-    const daysLeft = Math.floor(totalSeconds / 3600 / 24);
-    const hoursLeft = Math.floor(totalSeconds / 3600) % 24;
-    const minutesLeft = Math.floor(totalSeconds / 60) % 60;
-    const secondsLeft = Math.floor(totalSeconds) % 60;
-    days.innerHTML = daysLeft;
-    hours.innerHTML = hoursLeft;
-    minutes.innerHTML = minutesLeft;
-    seconds.innerHTML = secondsLeft;
-}, 1000);
+const countdown = () => {
+    const now = new Date().getTime()
+
+    const distance = countToDate - now
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+    daysSpan.innerHTML = days
+    hoursSpan.innerHTML = hours
+    minutesSpan.innerHTML = minutes
+    secondsSpan.innerHTML = seconds
+
+    if (distance < 0) {
+        clearInterval(countdownInterval)
+    }
+}
+
+countdown()
+
+const countdownInterval = setInterval(countdown, 1000)
+
+const fireworks = new Fireworks(fireworkContainer, {
+    speed: 4,
+    acceleration: 1.05,
+    friction: 1,
+    gravity: 4,
+    particles: 400,
+    explosion: 10
+})
+
+fireworks.start()
