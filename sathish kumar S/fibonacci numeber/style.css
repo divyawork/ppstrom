@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     font-size: 32px;
     background-image: url(./image/fibo.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   label {

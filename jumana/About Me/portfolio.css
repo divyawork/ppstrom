@@ -12,7 +12,7 @@
     --themeColor: #ff7505;
     --iconBGColor: #2C2F3F;
     --textColor: #353535;
-    --bgColor: #F7F7F7;
+    --bgColor: #ffffff;
 }
 
 /* header */
@@ -697,7 +697,7 @@ main {
 #contact .contact-row .contact-left {
     flex-basis: 40%;
     min-width: 40%;
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
     border-radius: 40px;
     padding: 30px;
@@ -742,7 +742,7 @@ main {
 #contact .contact-row .contact-right {
     flex-basis: 60%;
     min-width: 60%;
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
     border-radius: 40px;
     padding: 30px;
