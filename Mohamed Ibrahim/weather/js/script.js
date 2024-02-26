@@ -26,14 +26,14 @@ let city;
 let position;
 let currentWeatherArr;
 let dailyWeatherArr;
-// Swedish language variables
-let language = 'sv';
-let todayName = 'Väder just nu, ';
-let apparentName = 'Känns som: ';
-let windName = 'Vind: ';
-let pressureName = 'Lufttryck: ';
-let humidityName = 'Luftfuktighet: ';
-let dayNames = ['Söndag', 'Måndag', 'Tisdag', 'Onsdag','Torsdag', 'Fredag', 'Lördag'];
+// English language variables
+let language = 'en';
+let todayName = 'Weather now, ';
+let apparentName = 'Feels like: ';
+let windName = 'Wind: ';
+let pressureName = 'Pressure: ';
+let humidityName = 'Humidity: ';
+let dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday'];
 
 // Default settings
 spinnerDiv.style.display = 'none';
